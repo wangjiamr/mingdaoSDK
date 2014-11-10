@@ -511,11 +511,11 @@ public class RequestHTF extends CommonSupport {
 
 
         HtfParamsHistory htfParamsHistory=new HtfParamsHistory("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsHistory.setCustNo("1005703924");
+        htfParamsHistory.setCustNo("1005703928");
         htfParamsHistory.setTradeStatus("N");
         htfParamsHistory.setPayStatus("N");
-        htfParamsHistory.setStartDate("20141006");
-        htfParamsHistory.setEndDate("20141101");
+        htfParamsHistory.setStartDate("20141106");
+        htfParamsHistory.setEndDate("20141106");
         htfParamsHistory.setPageSize(10);
         htfParamsHistory.setCurrentPageNo(1);
         HtfHistory htfHistory=historyList(htfParamsHistory);
