@@ -459,7 +459,7 @@ public class RequestHTF extends CommonSupport {
     public static void main(String args[]) throws Exception{
 
         HtfParamsTradeDetail htfParamsTradeDetail=new HtfParamsTradeDetail("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsTradeDetail.setSerialNo("545DDDC434295FSV");
+        htfParamsTradeDetail.setSerialNo("54605E3C0002E118");
         tradeDetail(htfParamsTradeDetail);
 //        HtfParamsCustomerCode htfParamsCustomerCode=new HtfParamsCustomerCode();
 //        htfParamsCustomerCode.setCustomerNo("1005701810");
