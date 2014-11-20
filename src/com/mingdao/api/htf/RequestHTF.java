@@ -33,6 +33,13 @@ public class RequestHTF extends CommonSupport {
             if(rootObject!=null){
                  htfMobileCode=(HtfMobileCode) JSONObject.toBean(rootObject, HtfMobileCode.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfMobileCode=new HtfMobileCode();
+                htfMobileCode.setRetcode(rootObject.getString("retcode"));
+                htfMobileCode.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfMobileCode;
     }
@@ -48,6 +55,13 @@ public class RequestHTF extends CommonSupport {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
                 htfCustomerCode=(HtfCustomerCode) JSONObject.toBean(rootObject, HtfCustomerCode.class);
+            }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfCustomerCode=new HtfCustomerCode();
+                htfCustomerCode.setRetcode(rootObject.getString("retcode"));
+                htfCustomerCode.setRetmsg(rootObject.getString("retmsg"));
             }
         }
         return htfCustomerCode;
@@ -65,6 +79,13 @@ public class RequestHTF extends CommonSupport {
             if(rootObject!=null){
                 htfResult=(HtfResult) JSONObject.toBean(rootObject, HtfResult.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfResult=new HtfResult();
+                htfResult.setRetcode(rootObject.getString("retcode"));
+                htfResult.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfResult;
     }
@@ -79,6 +100,13 @@ public class RequestHTF extends CommonSupport {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
                 htfCustomer=(HtfCustomer) JSONObject.toBean(rootObject, HtfCustomer.class);
+            }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfCustomer=new HtfCustomer();
+                htfCustomer.setRetcode(rootObject.getString("retcode"));
+                htfCustomer.setRetmsg(rootObject.getString("retmsg"));
             }
         }
         return htfCustomer;
@@ -98,6 +126,13 @@ public class RequestHTF extends CommonSupport {
             if(rootObject!=null){
                 htfCustomerInfo=(HtfCustomerInfo) JSONObject.toBean(rootObject, HtfCustomerInfo.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfCustomerInfo=new HtfCustomerInfo();
+                htfCustomerInfo.setRetcode(rootObject.getString("retcode"));
+                htfCustomerInfo.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfCustomerInfo;
     }
@@ -114,6 +149,13 @@ public class RequestHTF extends CommonSupport {
             if(rootObject!=null){
                 htfCustomerStatus=(HtfCustomerStatus) JSONObject.toBean(rootObject, HtfCustomerStatus.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfCustomerStatus=new HtfCustomerStatus();
+                htfCustomerStatus.setRetcode(rootObject.getString("retcode"));
+                htfCustomerStatus.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfCustomerStatus;
     }
@@ -128,6 +170,13 @@ public class RequestHTF extends CommonSupport {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
                 htfAsset=(HtfAsset) JSONObject.toBean(rootObject, HtfAsset.class);
+            }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfAsset=new HtfAsset();
+                htfAsset.setRetcode(rootObject.getString("retcode"));
+                htfAsset.setRetmsg(rootObject.getString("retmsg"));
             }
         }
         return htfAsset;
@@ -144,6 +193,13 @@ public class RequestHTF extends CommonSupport {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
                 htfYeild=(HtfYeild) JSONObject.toBean(rootObject, HtfYeild.class);
+            }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfYeild=new HtfYeild();
+                htfYeild.setRetcode(rootObject.getString("retcode"));
+                htfYeild.setRetmsg(rootObject.getString("retmsg"));
             }
         }
         return htfYeild;
@@ -300,6 +356,13 @@ public class RequestHTF extends CommonSupport {
             if (rootObject != null) {
                 htfUpload=(HtfUpload) JSONObject.toBean(rootObject, HtfUpload.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfUpload=new HtfUpload();
+                htfUpload.setRetcode(rootObject.getString("retcode"));
+                htfUpload.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfUpload;
     }
@@ -317,6 +380,13 @@ public class RequestHTF extends CommonSupport {
             if (rootObject != null) {
                 htfPurchase = (HtfPurchase) JSONObject.toBean(rootObject, HtfPurchase.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfPurchase=new HtfPurchase();
+                htfPurchase.setRetcode(rootObject.getString("retcode"));
+                htfPurchase.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfPurchase;
     }
@@ -332,6 +402,13 @@ public class RequestHTF extends CommonSupport {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
                 htfToday= (HtfToday) JSONObject.toBean(rootObject, HtfToday.class);
+            }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfToday=new HtfToday();
+                htfToday.setRetcode(rootObject.getString("retcode"));
+                htfToday.setRetmsg(rootObject.getString("retmsg"));
             }
         }
         return htfToday;
@@ -349,6 +426,13 @@ public class RequestHTF extends CommonSupport {
             if (rootObject != null) {
                 htfHistory= (HtfHistory) JSONObject.toBean(rootObject, HtfHistory.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfHistory=new HtfHistory();
+                htfHistory.setRetcode(rootObject.getString("retcode"));
+                htfHistory.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfHistory;
     }
@@ -364,6 +448,13 @@ public class RequestHTF extends CommonSupport {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
                 htfProfit= (HtfProfit) JSONObject.toBean(rootObject, HtfProfit.class);
+            }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfProfit=new HtfProfit();
+                htfProfit.setRetcode(rootObject.getString("retcode"));
+                htfProfit.setRetmsg(rootObject.getString("retmsg"));
             }
         }
         return htfProfit;
@@ -381,6 +472,13 @@ public class RequestHTF extends CommonSupport {
             if (rootObject != null) {
                 htfWithdrawal = (HtfWithdrawal) JSONObject.toBean(rootObject, HtfWithdrawal.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfWithdrawal=new HtfWithdrawal();
+                htfWithdrawal.setRetcode(rootObject.getString("retcode"));
+                htfWithdrawal.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfWithdrawal;
     }
@@ -396,6 +494,13 @@ public class RequestHTF extends CommonSupport {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
                 htfQuickWithdrawal = (HtfQuickWithdrawal) JSONObject.toBean(rootObject, HtfQuickWithdrawal.class);
+            }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfQuickWithdrawal=new HtfQuickWithdrawal();
+                htfQuickWithdrawal.setRetcode(rootObject.getString("retcode"));
+                htfQuickWithdrawal.setRetmsg(rootObject.getString("retmsg"));
             }
         }
         return htfQuickWithdrawal;
@@ -415,6 +520,13 @@ public class RequestHTF extends CommonSupport {
             if (rootObject != null) {
                 htfWithdrawalToBalance = (HtfWithdrawalToBalance) JSONObject.toBean(rootObject, HtfWithdrawalToBalance.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfWithdrawalToBalance=new HtfWithdrawalToBalance();
+                htfWithdrawalToBalance.setRetcode(rootObject.getString("retcode"));
+                htfWithdrawalToBalance.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfWithdrawalToBalance;
     }
@@ -432,6 +544,13 @@ public class RequestHTF extends CommonSupport {
             if (rootObject != null) {
                 htfTradeDetail = (HtfTradeDetail) JSONObject.toBean(rootObject, HtfTradeDetail.class);
             }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfTradeDetail=new HtfTradeDetail();
+                htfTradeDetail.setRetcode(rootObject.getString("retcode"));
+                htfTradeDetail.setRetmsg(rootObject.getString("retmsg"));
+            }
         }
         return htfTradeDetail;
     }
@@ -447,6 +566,13 @@ public class RequestHTF extends CommonSupport {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
                 htfTradeDate = (HtfTradeDate) JSONObject.toBean(rootObject, HtfTradeDate.class);
+            }
+        }else{
+            JSONObject rootObject = responseObject.getJsonObject();
+            if(rootObject!=null){
+                htfTradeDate=new HtfTradeDate();
+                htfTradeDate.setRetcode(rootObject.getString("retcode"));
+                htfTradeDate.setRetmsg(rootObject.getString("retmsg"));
             }
         }
         return htfTradeDate;
