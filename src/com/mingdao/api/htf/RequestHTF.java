@@ -322,7 +322,6 @@ public class RequestHTF extends CommonSupport {
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
-                System.out.println(responseObject.getResult());
                 if (rootObject.has("item")) {
                     JSONArray items = rootObject.getJSONArray("item");
                     if (items != null && !items.isEmpty()) {
@@ -587,7 +586,7 @@ public class RequestHTF extends CommonSupport {
         HtfParamsTradeDetail htfParamsTradeDetail=new HtfParamsTradeDetail("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
         htfParamsTradeDetail.setSerialNo("54605E3C0002E118");
         tradeDetail(htfParamsTradeDetail);
-//        HtfParamsCustomerCode htfParamsCustomerCode=new HtfParamsCustomerCode();
+//        HtfParamsCustomerCode htfParamsCustomerCode=new HtfParÏamsCustomerCode();
 //        htfParamsCustomerCode.setCustomerNo("1005701810");
 //        customerCode(htfParamsCustomerCode);
 //
