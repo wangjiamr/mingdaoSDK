@@ -9,6 +9,7 @@ import com.mingdao.api.resources.URI;
 import com.mingdao.api.utils.RequestType;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.*;
 
@@ -21,13 +22,19 @@ import java.util.*;
  */
 public class RequestHTF extends CommonSupport {
 
-    public static HtfMobileCode mobileCode(HtfParamsMobileCode htfParamsMobileCode) throws Exception {
+    public static HtfMobileCode mobileCode(HtfParamsMobileCode htfParamsMobileCode,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsMobileCode); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfMobileCode htfMobileCode =null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_DVCODE_MOBILE, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_DVCODE_MOBILE, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
@@ -44,13 +51,19 @@ public class RequestHTF extends CommonSupport {
         return htfMobileCode;
     }
 
-    public static HtfCustomerCode customerCode(HtfParamsCustomerCode htfParamsCustomerCode) throws Exception {
+    public static HtfCustomerCode customerCode(HtfParamsCustomerCode htfParamsCustomerCode,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsCustomerCode); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfCustomerCode htfCustomerCode =null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_DVCODE_CUSTOMER, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_DVCODE_CUSTOMER, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
@@ -67,13 +80,19 @@ public class RequestHTF extends CommonSupport {
         return htfCustomerCode;
     }
 
-    public static HtfResult verification(HtfParamsVerification htfParamsVerification) throws Exception {
+    public static HtfResult verification(HtfParamsVerification htfParamsVerification,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsVerification); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfResult htfResult =null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_DVCODE_VERIFICATION, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_DVCODE_VERIFICATION, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
@@ -89,13 +108,19 @@ public class RequestHTF extends CommonSupport {
         }
         return htfResult;
     }
-    public static HtfCustomer customerCreate(HtfParamsCustomer htfParamsCustomer) throws Exception {
+    public static HtfCustomer customerCreate(HtfParamsCustomer htfParamsCustomer,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsCustomer); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfCustomer htfCustomer =null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_CUSTOMER, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_CUSTOMER, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
@@ -114,13 +139,19 @@ public class RequestHTF extends CommonSupport {
 
 
 
-    public static HtfCustomerInfo customerInfo(HtfParamsCustomerInfo htfParamsCustomerInfo) throws Exception {
+    public static HtfCustomerInfo customerInfo(HtfParamsCustomerInfo htfParamsCustomerInfo,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsCustomerInfo); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfCustomerInfo htfCustomerInfo =null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_CUSTOMER_INFO, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_CUSTOMER_INFO, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
@@ -137,13 +168,19 @@ public class RequestHTF extends CommonSupport {
         return htfCustomerInfo;
     }
 
-    public static HtfCustomerStatus customerStatus(HtfParamsCustomerStatus htfParamsCustomerStatus) throws Exception {
+    public static HtfCustomerStatus customerStatus(HtfParamsCustomerStatus htfParamsCustomerStatus,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsCustomerStatus); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfCustomerStatus htfCustomerStatus =null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_CUSTOMER_STATUS, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_CUSTOMER_STATUS, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
@@ -159,13 +196,19 @@ public class RequestHTF extends CommonSupport {
         }
         return htfCustomerStatus;
     }
-    public static HtfAsset customerAsset(HtfParamsAsset htfParamsAsset) throws Exception {
+    public static HtfAsset customerAsset(HtfParamsAsset htfParamsAsset,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsAsset); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfAsset htfAsset =null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_ASSET, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_ASSET, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
@@ -182,13 +225,19 @@ public class RequestHTF extends CommonSupport {
         return htfAsset;
     }
 
-    public static HtfYeild yeild(HtfParamsYeild htfParamsYeild) throws Exception {
+    public static HtfYeild yeild(HtfParamsYeild htfParamsYeild,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsYeild); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfYeild htfYeild =null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_YEILD_QUERY, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_YEILD_QUERY, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if(rootObject!=null){
@@ -207,25 +256,36 @@ public class RequestHTF extends CommonSupport {
 
 
 
-    public static void customerInfo(JSONObject object) throws Exception {
+    public static void customerInfo(JSONObject object,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(object); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
-
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_CUSTOMER_INFO, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_CUSTOMER_INFO, RequestType.POST);
         String resText = responseObject.getResult();
     }
 
 
-    public static List<HtfBank> bankList(HtfParamsBank htfParamsBank) throws Exception {
+    public static List<HtfBank> bankList(HtfParamsBank htfParamsBank,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsBank); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         List<HtfBank> htfBankList = null;
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
 
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_BANK, RequestType.POST);
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_BANK, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -249,14 +309,20 @@ public class RequestHTF extends CommonSupport {
         return htfBankList;
     }
 
-    public static List<HtfProvince> provinceList(HtfParamsProvince htfParamsProvince) throws Exception {
+    public static List<HtfProvince> provinceList(HtfParamsProvince htfParamsProvince,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsProvince); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         List<HtfProvince> htfProvinceList = null;
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
 
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_BANK_PROVINCE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(reqM, htfURL+ URI.HTF_INST_BANK_PROVINCE, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -280,14 +346,20 @@ public class RequestHTF extends CommonSupport {
         return htfProvinceList;
     }
 
-    public static List<HtfCity> cityList(HtfParamsCity htfParamsCity) throws Exception {
+    public static List<HtfCity> cityList(HtfParamsCity htfParamsCity,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsCity); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         List<HtfCity> htfCityList = null;
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
 
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_BANK_PROVINCE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_BANK_PROVINCE, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -311,14 +383,20 @@ public class RequestHTF extends CommonSupport {
         return htfCityList;
     }
 
-    public static List<HtfBankDetail> bankDetailList(HtfParamsBankDetail htfParamsBankDetail) throws Exception {
+    public static List<HtfBankDetail> bankDetailList(HtfParamsBankDetail htfParamsBankDetail,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsBankDetail); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         List<HtfBankDetail> bankDetailList = null;
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
 
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_BANK_DETAIL, RequestType.POST);
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_BANK_DETAIL, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -343,13 +421,19 @@ public class RequestHTF extends CommonSupport {
     }
 
 
-    public static HtfUpload upload(HtfParamsUpload htfParamsUpload) throws Exception {
+    public static HtfUpload upload(HtfParamsUpload htfParamsUpload,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsUpload); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfUpload htfUpload=null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_MEDIA_UPLOAD, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_MEDIA_UPLOAD, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -366,14 +450,20 @@ public class RequestHTF extends CommonSupport {
         return htfUpload;
     }
 
-    public static HtfPurchase purchaseList(HtfParamsPurchase htfParamsPurchase) throws Exception {
+    public static HtfPurchase purchaseList(HtfParamsPurchase htfParamsPurchase,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsPurchase); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfPurchase htfPurchase= null;
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
 
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_PURCHASE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_PURCHASE, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -390,13 +480,19 @@ public class RequestHTF extends CommonSupport {
         return htfPurchase;
     }
 
-    public static HtfToday todayList(HtfParamsToday htfParamsToday) throws Exception {
+    public static HtfToday todayList(HtfParamsToday htfParamsToday,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsToday); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfToday htfToday = null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_TODAY, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_TODAY, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -413,13 +509,19 @@ public class RequestHTF extends CommonSupport {
         return htfToday;
     }
 
-    public static HtfHistory historyList(HtfParamsHistory htfParamsHistory) throws Exception {
+    public static HtfHistory historyList(HtfParamsHistory htfParamsHistory,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsHistory); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfHistory htfHistory = null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_HISTORY, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_HISTORY, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -436,13 +538,19 @@ public class RequestHTF extends CommonSupport {
         return htfHistory;
     }
 
-    public static HtfProfit profitList(HtfParamsProfit htfParamsProfit) throws Exception {
+    public static HtfProfit profitList(HtfParamsProfit htfParamsProfit,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsProfit); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfProfit htfProfit = null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_PROFIT, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_PROFIT, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -459,13 +567,19 @@ public class RequestHTF extends CommonSupport {
         return htfProfit;
     }
 
-    public static HtfWithdrawal withdrawal(HtfParamsWithdrawal htfParamsWithdrawal) throws Exception {
+    public static HtfWithdrawal withdrawal(HtfParamsWithdrawal htfParamsWithdrawal,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsWithdrawal); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfWithdrawal htfWithdrawal = null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_WITHDRAWAL, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_WITHDRAWAL, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -482,13 +596,19 @@ public class RequestHTF extends CommonSupport {
         return htfWithdrawal;
     }
 
-    public static HtfQuickWithdrawal quickWithdrawal(HtfParamsQuickWithdrawal htfParamsQuickWithdrawal) throws Exception {
+    public static HtfQuickWithdrawal quickWithdrawal(HtfParamsQuickWithdrawal htfParamsQuickWithdrawal,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsQuickWithdrawal); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfQuickWithdrawal htfQuickWithdrawal = null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_QUICK_WITHDRAWAL, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL+ URI.HTF_INST_TRADE_QUICK_WITHDRAWAL, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -507,13 +627,19 @@ public class RequestHTF extends CommonSupport {
 
 
 
-    public static HtfWithdrawalToBalance withdrawalToBalance(HtfParamsWithdrawalToBalance htfParamsWithdrawalToBalance) throws Exception {
+    public static HtfWithdrawalToBalance withdrawalToBalance(HtfParamsWithdrawalToBalance htfParamsWithdrawalToBalance,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsWithdrawalToBalance); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfWithdrawalToBalance htfWithdrawalToBalance = null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_WITHDRAWAL_TO_BALANCE, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_WITHDRAWAL_TO_BALANCE, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -531,13 +657,19 @@ public class RequestHTF extends CommonSupport {
     }
 
 
-    public static HtfTradeDetail tradeDetail(HtfParamsTradeDetail htfParamsTradeDetail) throws Exception {
+    public static HtfTradeDetail tradeDetail(HtfParamsTradeDetail htfParamsTradeDetail,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsTradeDetail); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfTradeDetail htfTradeDetail = null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_DETAIL, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_DETAIL, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -554,13 +686,19 @@ public class RequestHTF extends CommonSupport {
         return htfTradeDetail;
     }
 
-    public static HtfTradeDate tradeDate(HtfParamsTradeDate htfParamsTradeDate) throws Exception {
+    public static HtfTradeDate tradeDate(HtfParamsTradeDate htfParamsTradeDate,AppConfig appConfig) throws Exception {
         String param[] = SignManager.getRetParam(htfParamsTradeDate); //加密
         Map<String, String> reqM = new HashMap<String, String>();
         reqM.put("sign", param[0]);
         reqM.put("msg", param[1]);
         HtfTradeDate htfTradeDate = null;
-        ResponseObject responseObject = requestAPI(reqM, URI.HTF_HOST + URI.HTF_INST_TRADE_QUERY_TRADE_DATE, RequestType.POST);
+        String htfURL=URI.HTF_HOST;
+        if(appConfig!=null){
+            if(StringUtils.isNotBlank(appConfig.getHtfUri())){
+                htfURL=appConfig.getHtfUri();
+            }
+        }
+        ResponseObject responseObject = requestAPI(reqM, htfURL + URI.HTF_INST_TRADE_QUERY_TRADE_DATE, RequestType.POST);
         if (!responseObject.isError()) {
             JSONObject rootObject = responseObject.getJsonObject();
             if (rootObject != null) {
@@ -585,7 +723,6 @@ public class RequestHTF extends CommonSupport {
 
         HtfParamsTradeDetail htfParamsTradeDetail=new HtfParamsTradeDetail("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
         htfParamsTradeDetail.setSerialNo("54605E3C0002E118");
-        tradeDetail(htfParamsTradeDetail);
 //        HtfParamsCustomerCode htfParamsCustomerCode=new HtfParÏamsCustomerCode();
 //        htfParamsCustomerCode.setCustomerNo("1005701810");
 //        customerCode(htfParamsCustomerCode);
@@ -643,9 +780,9 @@ public class RequestHTF extends CommonSupport {
         htfParamsHistory.setEndDate("20141106");
         htfParamsHistory.setPageSize(10);
         htfParamsHistory.setCurrentPageNo(1);
-        HtfHistory htfHistory=historyList(htfParamsHistory);
-        System.out.println(htfHistory);
-        System.out.println(htfHistory.getItem().size());
+//        HtfHistory htfHistory=historyList(htfParamsHistory);
+//        System.out.println(htfHistory);
+//        System.out.println(htfHistory.getItem().size());
 //
         HtfParamsToday htfParamsToday=new HtfParamsToday("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
         htfParamsToday.setCustNo("1005703375");
@@ -685,43 +822,43 @@ public class RequestHTF extends CommonSupport {
 
         HtfParamsMobileCode htfParamsMobileCode=new HtfParamsMobileCode("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
         htfParamsMobileCode.setMobileNo("13488725292");
-        HtfMobileCode htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
-        if(htfMobileCode!=null){
-            HtfParamsWithdrawal htfParamsWithdrawal=new HtfParamsWithdrawal("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-            htfParamsWithdrawal.setCustNo("1005703375");
-            htfParamsWithdrawal.setAmount(100.99d);
-            htfParamsWithdrawal.setAppId("1000000013");
-            htfParamsWithdrawal.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
-            htfParamsWithdrawal.setVerifyCode(htfMobileCode.getMobileDynamicCode());
-            //withdrawal(htfParamsWithdrawal);
-        }
+//        HtfMobileCode htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
+//        if(htfMobileCode!=null){
+//            HtfParamsWithdrawal htfParamsWithdrawal=new HtfParamsWithdrawal("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//            htfParamsWithdrawal.setCustNo("1005703375");
+//            htfParamsWithdrawal.setAmount(100.99d);
+//            htfParamsWithdrawal.setAppId("1000000013");
+//            htfParamsWithdrawal.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
+//            htfParamsWithdrawal.setVerifyCode(htfMobileCode.getMobileDynamicCode());
+//            //withdrawal(htfParamsWithdrawal);
+//        }
 
         htfParamsMobileCode=new HtfParamsMobileCode("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
         htfParamsMobileCode.setMobileNo("13488725292");
-        htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
-        if(htfMobileCode!=null){
-            HtfParamsWithdrawalToBalance htfParamsWithdrawalToBalance=new HtfParamsWithdrawalToBalance("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-            htfParamsWithdrawalToBalance.setCustNo("1005703376");
-            htfParamsWithdrawalToBalance.setAmount(99.99d);
-            htfParamsWithdrawalToBalance.setInstituteId("1005703375");
-            htfParamsWithdrawalToBalance.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
-            htfParamsWithdrawalToBalance.setVerifyCode(htfMobileCode.getMobileDynamicCode());
-            htfParamsWithdrawalToBalance.setInstSerialNo(htfParamsWithdrawalToBalance.getTransactionId());
-            //withdrawalToBalance(htfParamsWithdrawalToBalance);
-        }
+//        htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
+//        if(htfMobileCode!=null){
+//            HtfParamsWithdrawalToBalance htfParamsWithdrawalToBalance=new HtfParamsWithdrawalToBalance("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//            htfParamsWithdrawalToBalance.setCustNo("1005703376");
+//            htfParamsWithdrawalToBalance.setAmount(99.99d);
+//            htfParamsWithdrawalToBalance.setInstituteId("1005703375");
+//            htfParamsWithdrawalToBalance.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
+//            htfParamsWithdrawalToBalance.setVerifyCode(htfMobileCode.getMobileDynamicCode());
+//            htfParamsWithdrawalToBalance.setInstSerialNo(htfParamsWithdrawalToBalance.getTransactionId());
+//            //withdrawalToBalance(htfParamsWithdrawalToBalance);
+//        }
 
          htfParamsMobileCode=new HtfParamsMobileCode("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
         htfParamsMobileCode.setMobileNo("13488725292");
-         htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
-        if(htfMobileCode!=null){
-            HtfParamsQuickWithdrawal HtfParamsQuickWithdrawal=new HtfParamsQuickWithdrawal("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-            HtfParamsQuickWithdrawal.setCustNo("1005703375");
-            HtfParamsQuickWithdrawal.setAmount(100.99d);
-            HtfParamsQuickWithdrawal.setAppId("1000000013");
-            HtfParamsQuickWithdrawal.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
-            HtfParamsQuickWithdrawal.setVerifyCode(htfMobileCode.getMobileDynamicCode());
-            //quickWithdrawal(HtfParamsQuickWithdrawal);
-        }
+//         htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
+//        if(htfMobileCode!=null){
+//            HtfParamsQuickWithdrawal HtfParamsQuickWithdrawal=new HtfParamsQuickWithdrawal("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//            HtfParamsQuickWithdrawal.setCustNo("1005703375");
+//            HtfParamsQuickWithdrawal.setAmount(100.99d);
+//            HtfParamsQuickWithdrawal.setAppId("1000000013");
+//            HtfParamsQuickWithdrawal.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
+//            HtfParamsQuickWithdrawal.setVerifyCode(htfMobileCode.getMobileDynamicCode());
+//            //quickWithdrawal(HtfParamsQuickWithdrawal);
+//        }
 
 
 

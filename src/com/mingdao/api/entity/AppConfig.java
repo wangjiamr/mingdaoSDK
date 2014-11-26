@@ -17,7 +17,7 @@ public class AppConfig implements Serializable {
 
     private String redirectUri;
 
-    private String uploadCallback;
+    private String htfUri;
 
     public String getAppKey() {
         return appKey;
@@ -43,11 +43,11 @@ public class AppConfig implements Serializable {
         this.redirectUri = redirectUri;
     }
 
-    public String getUploadCallback() {
-        return uploadCallback;
+    public String getHtfUri() {
+        return htfUri;
     }
 
-    public void setUploadCallback(String uploadCallback) {
-        this.uploadCallback = uploadCallback;
+    public void setHtfUri(String htfUri) {
+        this.htfUri = htfUri;
     }
 }

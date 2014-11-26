@@ -344,7 +344,7 @@ public class URI {
      * *******************HTF*******************
      */
 
-    public static final String HTF_HOST = "http://101.231.197.36:7985/hop/";
+    public static final String HTF_HOST = "https://99fund.com/hop/";
 
     public static final String HTF_DVCODE_MOBILE= "mingdao/base/dvcode/mobile.htm";
 

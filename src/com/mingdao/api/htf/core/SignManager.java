@@ -73,12 +73,12 @@ public final class SignManager extends CommonSupport {
 //        object.put("transactionId","fe288386-3d26-4eab-b5d2-51eeab82a7f9-"+System.currentTimeMillis());
 //        object.put("spbillcreateIP","10.10.10.1");
         HtfParamsBank htfParamsBank=new HtfParamsBank("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        List<HtfBank> bankList= RequestHTF.bankList(htfParamsBank);
-        if(bankList!=null&&!bankList.isEmpty()){
-            for(HtfBank htfBank:bankList){
-                System.out.println(htfBank.getBankName());
-            }
-        }
+//        List<HtfBank> bankList= RequestHTF.bankList(htfParamsBank);
+//        if(bankList!=null&&!bankList.isEmpty()){
+//            for(HtfBank htfBank:bankList){
+//                System.out.println(htfBank.getBankName());
+//            }
+//        }
 //
 //        List<HtfProvince> provinceList= RequestHTF.provinceList(object);
 //        if(provinceList!=null&&!provinceList.isEmpty()){

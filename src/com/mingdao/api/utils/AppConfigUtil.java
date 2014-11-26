@@ -49,7 +49,7 @@ public class AppConfigUtil {
             appConfig.setAppKey(propertiesConfig.getString("app_key"));
             appConfig.setAppSecret(propertiesConfig.getString("app_secret"));
             appConfig.setRedirectUri(propertiesConfig.getString("redirect_uri"));
-            appConfig.setUploadCallback(propertiesConfig.getString("uploadCallback_uri"));
+            appConfig.setHtfUri(propertiesConfig.getString("htf_uri"));
         }
     }
 }
