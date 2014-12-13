@@ -2,6 +2,8 @@ package com.mingdao.api.common;
 
 import com.mingdao.api.entity.ResponseObject;
 import com.mingdao.api.htf.core.NeteaseEncrypt;
+import com.mingdao.api.utils.HttpClientUtil;
+import com.mingdao.api.utils.HttpURLConnectionUtil;
 import com.mingdao.api.utils.HttpsUtil;
 import com.mingdao.api.utils.RequestType;
 import net.sf.json.JSONObject;
@@ -33,7 +35,7 @@ public class CommonSupport {
             }
             responseObject = HttpsUtil.httpByGet2RObjSSL(URI, null, null);
         } else if (requestType == RequestType.POST) {
-            responseObject = HttpsUtil.httpByPost2RObjSSL(URI, params, null, null);
+            responseObject = HttpURLConnectionUtil.sendSSLPostRequest(URI, params);
         } else if (requestType == RequestType.POST_XML) {
             responseObject = HttpsUtil.httpByPostXMLObjSSL(URI, params, null, null);
         } else if (requestType == RequestType.POST_JSON) {

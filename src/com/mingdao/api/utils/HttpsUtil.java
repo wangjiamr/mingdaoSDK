@@ -7,6 +7,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.HttpVersion;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -26,6 +27,7 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
+import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 
 import javax.net.ssl.SSLContext;
@@ -244,8 +246,11 @@ public class HttpsUtil {
             }
             hp.setEntity(new UrlEncodedFormEntity(formParams, "UTF-8"));
             // 发送请求，得到响应
+            System.out.println("httpClient.execute");
             HttpResponse response = httpClient.execute(hp);
+            System.out.println("==");
             if(response!=null){
+                System.out.println("ok");
                 responseObject = new ResponseObject();
                 responseObject.setUri(hp.getURI().toString());
                 responseObject.setStatusCode(response.getStatusLine().getStatusCode());
@@ -256,6 +261,7 @@ public class HttpsUtil {
                     responseStr = EntityUtils.toString(response.getEntity(),
                             resultCharset);
                 }
+                System.out.println("==result="+responseStr);
                 responseObject.setResult(responseStr);
             }
 
@@ -468,11 +474,28 @@ public class HttpsUtil {
             ClientConnectionManager ccm = new ThreadSafeClientConnManager(
                     params, registry);
             DefaultHttpClient httpClient = new DefaultHttpClient(ccm, params);
+            httpClient.setHttpRequestRetryHandler(new HttpRequestRetryHandler() {
+                @Override
+                public boolean retryRequest(IOException exception, int executionCount,
+                                            HttpContext context) {
+                    if (executionCount > 3) {
+                        System.out.println("Maximum tries reached for client http pool ");
+                        return false;
+                    }
+                    if (exception instanceof org.apache.http.NoHttpResponseException) {
+                        System.out.println("Maximum tries reached for client http pool ");
+                        return true;
+                    }
+                    return false;
+                }
+            });
             // 设置cmwap代理
             if (IS_CMWAP) {
                 HttpHost proxy = new HttpHost(CMWAP_HOST, CMWAP_PORT);
                 httpClient.getParams().setParameter(
                         ConnRoutePNames.DEFAULT_PROXY, proxy);
+
+
             }
             return new DefaultHttpClient(ccm, params);
         } catch (Exception e) {
