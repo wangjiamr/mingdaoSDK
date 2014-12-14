@@ -720,154 +720,154 @@ public class RequestHTF extends CommonSupport {
 
 
     public static void main(String args[]) throws Exception{
-
-        HtfParamsTradeDetail htfParamsTradeDetail=new HtfParamsTradeDetail("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsTradeDetail.setSerialNo("54605E3C0002E118");
-//        HtfParamsCustomerCode htfParamsCustomerCode=new HtfParÏamsCustomerCode();
-//        htfParamsCustomerCode.setCustomerNo("1005701810");
-//        customerCode(htfParamsCustomerCode);
 //
-        HtfParamsCustomerInfo htfParamsCustomerInfo=new HtfParamsCustomerInfo("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsCustomerInfo.setCustNo("1005703841");
-        //customerInfo(htfParamsCustomerInfo);
-
-//        File file = new File("/project/123.jpg");
-//        FileInputStream inputFile = new FileInputStream(file);
-//        byte[] buffer = new byte[(int)file.length()];
-//        inputFile.read(buffer);
-//        inputFile.close();
-//        String fileBase64= new BASE64Encoder().encode(buffer);
+//        HtfParamsTradeDetail htfParamsTradeDetail=new HtfParamsTradeDetail("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsTradeDetail.setSerialNo("54605E3C0002E118");
+////        HtfParamsCustomerCode htfParamsCustomerCode=new HtfParÏamsCustomerCode();
+////        htfParamsCustomerCode.setCustomerNo("1005701810");
+////        customerCode(htfParamsCustomerCode);
+////
+//        HtfParamsCustomerInfo htfParamsCustomerInfo=new HtfParamsCustomerInfo("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsCustomerInfo.setCustNo("1005703841");
+//        //customerInfo(htfParamsCustomerInfo);
 //
-//        HtfParamsUpload htfParamsUpload=new HtfParamsUpload();
-//        htfParamsUpload.setInstIdNo("1005701810");
-//        htfParamsUpload.setFile(fileBase64);
-//        htfParamsUpload.setType("0");
-//        htfParamsUpload.setFilename("123.jpg");
-//        HtfUpload htfUpload= upload(htfParamsUpload);
-//        System.out.println(htfUpload.getMediaId());
-//        HtfParamsDownload htfParamsDownload=new HtfParamsDownload();
-//        htfParamsDownload.setTargetPath("2014091016111552022a7938b01430dc");
-        //download(htfParamsDownload);
-
-
-//        HtfParamsCustomerInfo htfParamsCustomerInfo=new HtfParamsCustomerInfo();
-//        htfParamsCustomerInfo.setCustNo("1005703072");
-//        customerInfo(htfParamsCustomerInfo);
+////        File file = new File("/project/123.jpg");
+////        FileInputStream inputFile = new FileInputStream(file);
+////        byte[] buffer = new byte[(int)file.length()];
+////        inputFile.read(buffer);
+////        inputFile.close();
+////        String fileBase64= new BASE64Encoder().encode(buffer);
+////
+////        HtfParamsUpload htfParamsUpload=new HtfParamsUpload();
+////        htfParamsUpload.setInstIdNo("1005701810");
+////        htfParamsUpload.setFile(fileBase64);
+////        htfParamsUpload.setType("0");
+////        htfParamsUpload.setFilename("123.jpg");
+////        HtfUpload htfUpload= upload(htfParamsUpload);
+////        System.out.println(htfUpload.getMediaId());
+////        HtfParamsDownload htfParamsDownload=new HtfParamsDownload();
+////        htfParamsDownload.setTargetPath("2014091016111552022a7938b01430dc");
+//        //download(htfParamsDownload);
 //
-        HtfParamsAsset htfParamsAsset=new HtfParamsAsset("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsAsset.setCustNo("1005703375");
-       // HtfAsset htfAsset=customerAsset(htfParamsAsset);
-       // System.out.println(htfAsset.getCashBalance());
 //
-        HtfParamsCustomerStatus htfParamsCustomerStatus=new HtfParamsCustomerStatus("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsCustomerStatus.setInstIdNo("10151332");
-        htfParamsCustomerStatus.setInstName("明道test1015");
-        //customerStatus(htfParamsCustomerStatus);
-
-        HtfParamsPurchase htfParamsPurchase=new HtfParamsPurchase("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsPurchase.setCustNo("1005703072");
-        htfParamsPurchase.setTradeTy("939");
-        //HtfPurchase htfPurchase=purchaseList(htfParamsPurchase);
-        //System.out.println(htfPurchase);
-        //System.out.println(htfPurchase.getItem().size());
-
-
-        HtfParamsHistory htfParamsHistory=new HtfParamsHistory("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsHistory.setCustNo("1005703928");
-        htfParamsHistory.setTradeStatus("N");
-        htfParamsHistory.setPayStatus("N");
-        htfParamsHistory.setStartDate("20141106");
-        htfParamsHistory.setEndDate("20141106");
-        htfParamsHistory.setPageSize(10);
-        htfParamsHistory.setCurrentPageNo(1);
-//        HtfHistory htfHistory=historyList(htfParamsHistory);
-//        System.out.println(htfHistory);
-//        System.out.println(htfHistory.getItem().size());
+////        HtfParamsCustomerInfo htfParamsCustomerInfo=new HtfParamsCustomerInfo();
+////        htfParamsCustomerInfo.setCustNo("1005703072");
+////        customerInfo(htfParamsCustomerInfo);
+////
+//        HtfParamsAsset htfParamsAsset=new HtfParamsAsset("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsAsset.setCustNo("1005703375");
+//       // HtfAsset htfAsset=customerAsset(htfParamsAsset);
+//       // System.out.println(htfAsset.getCashBalance());
+////
+//        HtfParamsCustomerStatus htfParamsCustomerStatus=new HtfParamsCustomerStatus("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsCustomerStatus.setInstIdNo("10151332");
+//        htfParamsCustomerStatus.setInstName("明道test1015");
+//        //customerStatus(htfParamsCustomerStatus);
 //
-        HtfParamsToday htfParamsToday=new HtfParamsToday("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsToday.setCustNo("1005703375");
-        htfParamsToday.setTradeStatus("Y");
-        htfParamsToday.setPayStatus("Y");
-        htfParamsToday.setPageSize(10);
-        htfParamsToday.setCurrentPageNo(1);
-       // HtfToday htfToday=todayList(htfParamsToday);
-        //System.out.println(htfToday);
-        //System.out.println(htfToday.getItem().size());
-        //HtfParamsYeild htfParamsYeild=new HtfParamsYeild("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-
-
-
-        HtfParamsProfit htfParamsProfit=new HtfParamsProfit("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsProfit.setCustNo("1005703072");
-        htfParamsProfit.setPageSize(10);
-        htfParamsProfit.setCurrentPageNo(1);
-        htfParamsProfit.setStartDate("20140920");
-        htfParamsProfit.setEndDate("20141020");
-//        HtfProfit htfProfit=profitList(htfParamsProfit);
-//        System.out.println(htfProfit);
-//        System.out.println(htfProfit.getItem().size());
-//        List<HtfProfitItem> htfProfitItems=htfProfit.getItemList();
-//        if(htfProfitItems!=null&&!htfProfitItems.isEmpty()){
-//            for(HtfProfitItem htfProfitItem:htfProfitItems){
-//                System.out.println(htfProfitItem.getDate()+":"+htfProfitItem.getProfit());
-//            }
-//        }
-
-        //HtfParamsYeild htfParamsYeild=new HtfParamsYeild("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        //HtfYeild htfYeild=yeild(htfParamsYeild);
-
-
-        // yeild(htfParamsYeild);
-
-
-        HtfParamsMobileCode htfParamsMobileCode=new HtfParamsMobileCode("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsMobileCode.setMobileNo("13488725292");
-//        HtfMobileCode htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
-//        if(htfMobileCode!=null){
-//            HtfParamsWithdrawal htfParamsWithdrawal=new HtfParamsWithdrawal("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-//            htfParamsWithdrawal.setCustNo("1005703375");
-//            htfParamsWithdrawal.setAmount(100.99d);
-//            htfParamsWithdrawal.setAppId("1000000013");
-//            htfParamsWithdrawal.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
-//            htfParamsWithdrawal.setVerifyCode(htfMobileCode.getMobileDynamicCode());
-//            //withdrawal(htfParamsWithdrawal);
-//        }
-
-        htfParamsMobileCode=new HtfParamsMobileCode("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsMobileCode.setMobileNo("13488725292");
-//        htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
-//        if(htfMobileCode!=null){
-//            HtfParamsWithdrawalToBalance htfParamsWithdrawalToBalance=new HtfParamsWithdrawalToBalance("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-//            htfParamsWithdrawalToBalance.setCustNo("1005703376");
-//            htfParamsWithdrawalToBalance.setAmount(99.99d);
-//            htfParamsWithdrawalToBalance.setInstituteId("1005703375");
-//            htfParamsWithdrawalToBalance.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
-//            htfParamsWithdrawalToBalance.setVerifyCode(htfMobileCode.getMobileDynamicCode());
-//            htfParamsWithdrawalToBalance.setInstSerialNo(htfParamsWithdrawalToBalance.getTransactionId());
-//            //withdrawalToBalance(htfParamsWithdrawalToBalance);
-//        }
-
-         htfParamsMobileCode=new HtfParamsMobileCode("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsMobileCode.setMobileNo("13488725292");
-//         htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
-//        if(htfMobileCode!=null){
-//            HtfParamsQuickWithdrawal HtfParamsQuickWithdrawal=new HtfParamsQuickWithdrawal("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-//            HtfParamsQuickWithdrawal.setCustNo("1005703375");
-//            HtfParamsQuickWithdrawal.setAmount(100.99d);
-//            HtfParamsQuickWithdrawal.setAppId("1000000013");
-//            HtfParamsQuickWithdrawal.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
-//            HtfParamsQuickWithdrawal.setVerifyCode(htfMobileCode.getMobileDynamicCode());
-//            //quickWithdrawal(HtfParamsQuickWithdrawal);
-//        }
-
-
-
-
-
-        HtfParamsTradeDate htfParamsTradeDate=new HtfParamsTradeDate("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
-        htfParamsTradeDate.setApKind("939");
-        //HtfTradeDate htfTradeDate= tradeDate(htfParamsTradeDate);
-        //System.out.println(htfTradeDate.getTradable());
+//        HtfParamsPurchase htfParamsPurchase=new HtfParamsPurchase("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsPurchase.setCustNo("1005703072");
+//        htfParamsPurchase.setTradeTy("939");
+//        //HtfPurchase htfPurchase=purchaseList(htfParamsPurchase);
+//        //System.out.println(htfPurchase);
+//        //System.out.println(htfPurchase.getItem().size());
+//
+//
+//        HtfParamsHistory htfParamsHistory=new HtfParamsHistory("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsHistory.setCustNo("1005703928");
+//        htfParamsHistory.setTradeStatus("N");
+//        htfParamsHistory.setPayStatus("N");
+//        htfParamsHistory.setStartDate("20141106");
+//        htfParamsHistory.setEndDate("20141106");
+//        htfParamsHistory.setPageSize(10);
+//        htfParamsHistory.setCurrentPageNo(1);
+////        HtfHistory htfHistory=historyList(htfParamsHistory);
+////        System.out.println(htfHistory);
+////        System.out.println(htfHistory.getItem().size());
+////
+//        HtfParamsToday htfParamsToday=new HtfParamsToday("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsToday.setCustNo("1005703375");
+//        htfParamsToday.setTradeStatus("Y");
+//        htfParamsToday.setPayStatus("Y");
+//        htfParamsToday.setPageSize(10);
+//        htfParamsToday.setCurrentPageNo(1);
+//       // HtfToday htfToday=todayList(htfParamsToday);
+//        //System.out.println(htfToday);
+//        //System.out.println(htfToday.getItem().size());
+//        //HtfParamsYeild htfParamsYeild=new HtfParamsYeild("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//
+//
+//
+//        HtfParamsProfit htfParamsProfit=new HtfParamsProfit("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsProfit.setCustNo("1005703072");
+//        htfParamsProfit.setPageSize(10);
+//        htfParamsProfit.setCurrentPageNo(1);
+//        htfParamsProfit.setStartDate("20140920");
+//        htfParamsProfit.setEndDate("20141020");
+////        HtfProfit htfProfit=profitList(htfParamsProfit);
+////        System.out.println(htfProfit);
+////        System.out.println(htfProfit.getItem().size());
+////        List<HtfProfitItem> htfProfitItems=htfProfit.getItemList();
+////        if(htfProfitItems!=null&&!htfProfitItems.isEmpty()){
+////            for(HtfProfitItem htfProfitItem:htfProfitItems){
+////                System.out.println(htfProfitItem.getDate()+":"+htfProfitItem.getProfit());
+////            }
+////        }
+//
+//        //HtfParamsYeild htfParamsYeild=new HtfParamsYeild("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        //HtfYeild htfYeild=yeild(htfParamsYeild);
+//
+//
+//        // yeild(htfParamsYeild);
+//
+//
+//        HtfParamsMobileCode htfParamsMobileCode=new HtfParamsMobileCode("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsMobileCode.setMobileNo("13488725292");
+////        HtfMobileCode htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
+////        if(htfMobileCode!=null){
+////            HtfParamsWithdrawal htfParamsWithdrawal=new HtfParamsWithdrawal("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+////            htfParamsWithdrawal.setCustNo("1005703375");
+////            htfParamsWithdrawal.setAmount(100.99d);
+////            htfParamsWithdrawal.setAppId("1000000013");
+////            htfParamsWithdrawal.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
+////            htfParamsWithdrawal.setVerifyCode(htfMobileCode.getMobileDynamicCode());
+////            //withdrawal(htfParamsWithdrawal);
+////        }
+//
+//        htfParamsMobileCode=new HtfParamsMobileCode("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsMobileCode.setMobileNo("13488725292");
+////        htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
+////        if(htfMobileCode!=null){
+////            HtfParamsWithdrawalToBalance htfParamsWithdrawalToBalance=new HtfParamsWithdrawalToBalance("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+////            htfParamsWithdrawalToBalance.setCustNo("1005703376");
+////            htfParamsWithdrawalToBalance.setAmount(99.99d);
+////            htfParamsWithdrawalToBalance.setInstituteId("1005703375");
+////            htfParamsWithdrawalToBalance.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
+////            htfParamsWithdrawalToBalance.setVerifyCode(htfMobileCode.getMobileDynamicCode());
+////            htfParamsWithdrawalToBalance.setInstSerialNo(htfParamsWithdrawalToBalance.getTransactionId());
+////            //withdrawalToBalance(htfParamsWithdrawalToBalance);
+////        }
+//
+//         htfParamsMobileCode=new HtfParamsMobileCode("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsMobileCode.setMobileNo("13488725292");
+////         htfMobileCode=RequestHTF.mobileCode(htfParamsMobileCode);
+////        if(htfMobileCode!=null){
+////            HtfParamsQuickWithdrawal HtfParamsQuickWithdrawal=new HtfParamsQuickWithdrawal("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+////            HtfParamsQuickWithdrawal.setCustNo("1005703375");
+////            HtfParamsQuickWithdrawal.setAmount(100.99d);
+////            HtfParamsQuickWithdrawal.setAppId("1000000013");
+////            HtfParamsQuickWithdrawal.setVerifyCodeSeq(htfMobileCode.getVerifyCodeSeq());
+////            HtfParamsQuickWithdrawal.setVerifyCode(htfMobileCode.getMobileDynamicCode());
+////            //quickWithdrawal(HtfParamsQuickWithdrawal);
+////        }
+//
+//
+//
+//
+//
+//        HtfParamsTradeDate htfParamsTradeDate=new HtfParamsTradeDate("f62246e7-cfe1-4860-9d08-4d11342eea70","10.0.0.1");
+//        htfParamsTradeDate.setApKind("939");
+//        //HtfTradeDate htfTradeDate= tradeDate(htfParamsTradeDate);
+//        //System.out.println(htfTradeDate.getTradable());
 
 
     }
