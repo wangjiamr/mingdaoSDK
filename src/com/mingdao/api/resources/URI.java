@@ -12,6 +12,8 @@ public class URI {
     /**
      * ********************Oauth2********************
      */
+
+
     public static final String OAUTH2_AUTHORIZE = "https://api.mingdao.com/oauth2/authorize";
 
     public static final String OAUTH2_ACCESS_TOKEN = "https://api.mingdao.com/oauth2/access_token";
@@ -68,6 +70,8 @@ public class URI {
     public static final String MESSAGE_CREATE = "https://api.mingdao.com/message/create";
 
     public static final String MESSAGE_CREATE_SYS = "https://api.mingdao.com/message/create_sys";
+
+    public static final String MESSAGE_CREATE_SYS2 = "https://api2.mingdao.com/message/create_sys";
 
     public static final String MESSAGE_DELETE = "https://api.mingdao.com/message/delete";
 
@@ -337,7 +341,7 @@ public class URI {
     /***
      * *******************IGeTui*******************
      */
-    public static final String IGeTui_PUSH = "http://laapi.mingdao.com/common/igetui";
+    public static final String IGeTui_PUSH = "http://oa.mingdao.com/common/igetui";
 
 
     /***

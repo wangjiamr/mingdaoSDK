@@ -24,7 +24,6 @@ import java.util.Map;
  */
 public class RequestOauth2 extends CommonSupport {
 
-    //{ "result": { "project": [ {"id": "f62246e7-cfe1-4860-9d08-4d11342eea70", "name": "Mingdao Plus" }, {"id": "fe288386-3d26-4eab-b5d2-51eeab82a7f9", "name": "上海梅花信息有限公司" } ] }}
     public static List<NetWork> getNetWork(String userName, String password) throws Exception {
         AppConfig appConfig = AppConfigUtil.create();
         Map<String, String> params = new HashMap<String, String>();
@@ -72,12 +71,13 @@ public class RequestOauth2 extends CommonSupport {
                         }
                     }
                 }
+            }else{
+                throw new Oauth2Execption(responseObject.getErrorCode());
             }
         }
         return netWorkList;
     }
 
-    //{ "result": {"access_token": "28256b8bc7ee449592a7b66cc45ba97e", "expires_in": "79200", "refresh_token": "b5fb48cd453e4f96bb89a6c6105e74b4" }}
     public static OAuth2Object getAccessToken(String p_signature, String userName, String password) throws Exception {
         AppConfig appConfig = AppConfigUtil.create();
         Map<String, String> params = new HashMap<String, String>();

@@ -230,4 +230,31 @@ public class RequestMessage extends CommonSupport {
         return messageID;
     }
 
+    public static String createSys2(String id, String pid, String msg,
+                                   String app_key, String app_secret) throws Exception {
+        String messageID = null;
+        if (StringUtils.isNotBlank(msg)) {
+            Map<String, String> params = new HashMap<String, String>();
+            params.put("format", "json");
+            params.put("u_id", id);
+            params.put("p_id", pid);
+            params.put("app_key", app_key);
+            params.put("app_secret", app_secret);
+            params.put("msg", msg);
+            ResponseObject responseObject = requestAPI(params, URI.MESSAGE_CREATE_SYS2, RequestType.POST);
+            if (responseObject != null) {
+                if (!responseObject.isError()) {
+                    String result = responseObject.getResult();
+                    if (StringUtils.isNotBlank(result)) {
+                        JSONObject rootObject = JSONObject.fromObject(result);
+                        if (rootObject != null) {
+                            messageID = rootObject.getString("message");
+                        }
+                    }
+                }
+            }
+        }
+        return messageID;
+    }
+
 }

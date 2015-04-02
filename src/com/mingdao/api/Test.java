@@ -1,5 +1,6 @@
 package com.mingdao.api;
 
+import com.mingdao.api.billing.RequestBilling;
 import com.mingdao.api.entity.*;
 import com.mingdao.api.message.RequestMessage;
 import net.sf.json.JSONArray;
@@ -18,6 +19,11 @@ import java.util.Random;
  */
 public class Test {
     public static void main(String[] as) throws Exception {
+        String a="80f1ca510440d7ec1c5048df555e25e182f01b19";
+        String aa="1423477656312";
+        String aaa="1423477656312";
+        String aaaa="{\"app\":\"A94D5B3A737F\",\"aid\":\"4150\",\"title\":\"订购明道OA基础套餐,账单日期2015-02-09 至 2015-03-09(当前网络实际人数:)27人\",\"p_id\":{\"companyId\":\"f62246e7-cfe1-4860-9d08-4d11342eea70\",\"companyLicense\":2,\"companyLogo\":\"https://dn-mdpic.qbox.me/ProjectLogo/default.gif?imageView2/2/h/60\",\"companyName\":\"mingdao Plus\",\"companyNameEn\":\"\",\"created\":{\"date\":14,\"day\":1,\"hours\":4,\"minutes\":35,\"month\":3,\"nanos\":0,\"seconds\":15,\"time\":1397421315000,\"timezoneOffset\":-480,\"year\":114},\"createdBy\":\"d5e38abd-7772-4df6-b30a-97872c5d1e6e\",\"id\":2,\"updated\":{\"date\":9,\"day\":1,\"hours\":18,\"minutes\":27,\"month\":1,\"seconds\":28,\"time\":1423477648000,\"timezoneOffset\":-480,\"year\":115},\"updatedBy\":\"d5e38abd-7772-4df6-b30a-97872c5d1e6e\",\"useYn\":\"Y\"},\"u_id\":\"d5e38abd-7772-4df6-b30a-97872c5d1e6e\",\"summary\":\"订购明道OA账单\",\"amount\":199,\"c_date\":\"2015-02-09 18:27\",\"p_date\":\"2015-02-09\"}";
+        RequestBilling.create(a,aa,aaa,aaaa);
         System.out.println(System.setProperty("http.keepAlive","false"));
         System.out.println(System.getProperty("http.keepAlive"));
 //        System.out.println(new Random().nextInt(4));//指定种子数100);

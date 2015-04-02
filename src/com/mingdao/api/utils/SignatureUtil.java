@@ -42,8 +42,8 @@ public class SignatureUtil {
             list.add(appInfo);
             list.add(timeStamp.toLowerCase());
             list.add(nonce.toLowerCase());
-            list.add(content.toLowerCase());
             Collections.sort(list, Collator.getInstance(java.util.Locale.CHINA));
+            list.add(0,content.toLowerCase());
 
             signature = "";
             for (String s : list) {
