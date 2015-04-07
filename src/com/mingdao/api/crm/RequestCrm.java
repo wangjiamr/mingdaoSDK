@@ -44,6 +44,7 @@ public class RequestCrm extends CommonSupport {
             ResponseObject responseObject = requestAPI(params, URI.CRM_OWNER, RequestType.POST);
             if(responseObject!=null){
                 result=responseObject.getJsonObject();
+                System.out.println(result.toString());
             }
         }
         return result;
