@@ -59,32 +59,21 @@ public class SignatureUtil {
         return signature;
     }
 
-    public static String getSignature(AppConfig appConfig,String timeStamp, String nonce, String content) {
+    public static String getSignature(String authToken, String timeStamp,String nonce, String content) {
         String signature = null;
-        if (StringUtils.isNotBlank(timeStamp) && StringUtils.isNotBlank(nonce) && StringUtils.isNotBlank(content)) {
-            String appkey = appConfig.getAppKey();
-            String appSecret = appConfig.getAppSecret();
-            appkey = appkey.toLowerCase();
-            appSecret = appSecret.toLowerCase();
-            List<String> list = new ArrayList<String>();
-            list.add(appkey);
-            list.add(appSecret);
-            Collections.sort(list, Collator.getInstance(java.util.Locale.CHINA));
-
-            String appInfo = "";
-            for (String s : list) {
-                appInfo += s;
-            }
-
+        if (StringUtils.isNotBlank(authToken) && StringUtils.isNotBlank(nonce) && StringUtils.isNotBlank(content)) {
+            String tokeninfo=null;
             try {
-                appInfo = EncryptUtil.encrypt(appInfo, EncryptUtil.MD5);
+                authToken=authToken.toLowerCase();
+                authToken=EncryptUtil.encrypt(authToken, EncryptUtil.MD5);
             } catch (Exception e) {
 
             }
-            appInfo = appInfo.toLowerCase();
+            tokeninfo=authToken.toLowerCase();
 
-            list.clear();
-            list.add(appInfo);
+
+            List<String> list = new ArrayList<String>();
+            list.add(tokeninfo);
             list.add(timeStamp.toLowerCase());
             list.add(nonce.toLowerCase());
             list.add(content.toLowerCase());
@@ -94,13 +83,15 @@ public class SignatureUtil {
             for (String s : list) {
                 signature += s;
             }
-            try {
-                signature = EncryptUtil.encrypt(signature, EncryptUtil.SHA1);
-            } catch (Exception e) {
+            try{
+                signature = EncryptUtil.encrypt(signature,EncryptUtil.SHA1);
+            }catch (Exception e){
 
             }
             signature = signature.toLowerCase();
         }
         return signature;
     }
+
+
 }

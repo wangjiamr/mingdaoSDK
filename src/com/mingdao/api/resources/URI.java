@@ -118,6 +118,11 @@ public class URI {
     public static final String COMPANY_PAIDUSERSCOUNT = "https://api.mingdao.com/company/get_paiduserscount";
 
     /**
+     * ********************CRM********************
+     */
+    public static final String CRM_OWNER = "http://devcrm.mingdao.com/api/user/getprojectowner";
+
+    /**
      * ********************GROUP********************
      */
     public static final String GROUP_ALL = "https://api.mingdao.com/group/all";
