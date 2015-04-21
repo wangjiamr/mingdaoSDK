@@ -19,7 +19,7 @@ public class SignatureUtil {
 
     public static String getSignature(String timeStamp, String nonce, String content, String appkey, String appSecret) {
         String signature = null;
-        if (StringUtils.isNotBlank(timeStamp) && StringUtils.isNotBlank(nonce) && StringUtils.isNotBlank(content)) {
+        if (StringUtils.isNotBlank(timeStamp) && StringUtils.isNotBlank(nonce)) {
             appkey = appkey.toLowerCase();
             appSecret = appSecret.toLowerCase();
             List<String> list = new ArrayList<String>();
@@ -43,8 +43,9 @@ public class SignatureUtil {
             list.add(timeStamp.toLowerCase());
             list.add(nonce.toLowerCase());
             Collections.sort(list, Collator.getInstance(java.util.Locale.CHINA));
-            list.add(0,content.toLowerCase());
-
+            if(StringUtils.isNotBlank(content)){
+                list.add(0,content.toLowerCase());
+            }
             signature = "";
             for (String s : list) {
                 signature += s;

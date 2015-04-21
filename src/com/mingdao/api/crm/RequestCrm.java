@@ -32,6 +32,7 @@ public class RequestCrm extends CommonSupport {
             Double nonce = Math.random() * (999999 - 100000) + 1215;
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("projectid",projectId);
+            jsonObject.put("isshow",-1);
             String content=jsonObject.toString();
 
             String signature=SignatureUtil.getSignature(authToken, timestamp, nonce+"", content);
