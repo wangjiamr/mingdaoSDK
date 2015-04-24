@@ -106,6 +106,8 @@ public class RequestOauth2 extends CommonSupport {
 
                     }
                 }
+            }else{
+                throw new Oauth2Execption(responseObject.getErrorCode());
             }
         }
         return oAuth2Object;

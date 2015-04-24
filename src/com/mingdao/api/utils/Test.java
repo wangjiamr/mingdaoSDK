@@ -25,14 +25,14 @@ public class Test {
 //       // System.out.println(billing);
 
         String signature="3d1f222c70e9a93feb8c7dde887e0abc4b3dbe8d";
-        String timestamp="2015/2/12 13:35:57";
-        String nonce="548481555";
-        String content="{\"bid\":\"7ee03b67-65dd-428f-8d70-1fecaa60d9cc\",\"pid\":\"070ca21e-4c5b-4997-b4bd-98e3f60af144\",\"uid\":\"\",\"event\":\"3\",\"status\":\"1\",\"time\":\"2015-02-12 13:35:57\"}";
+        String timestamp="1429639522";
+        String nonce="8722";
+        String content="";
         String laSignature = SignatureUtil.getSignature(timestamp, nonce, content, "16488A907ECDC527B977B94C52CC3B", "8CF94C4DF0E82D12E344244AD80F05C");
         System.out.println(content);
         System.out.println(signature);
         System.out.println(laSignature);
 
-        RequestCrm.getOwner("7103DD4E-29D0-402A-99D6-B356C3A13518","C9C0F815FE436BC7F804FA062B91236CAC599643","fe288386-3d26-4eab-b5d2-51eeab82a7f9");
+        RequestCrm.getOwner("7103DD4E-29D0-402A-99D6-B356C3A13518","C9C0F815FE436BC7F804FA062B91236CAC599643","dadacc77-5e18-4805-a5db-a60d084f74bc");
     }
 }
