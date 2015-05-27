@@ -7,6 +7,7 @@ import com.mingdao.api.entity.ResponseObject;
 import com.mingdao.api.entity.User;
 import com.mingdao.api.resources.URI;
 import com.mingdao.api.utils.RequestType;
+import com.mingdao.api.utils.SignatureUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
@@ -21,8 +22,57 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class RequestUser extends CommonSupport {
-
-    //{ "result": { "user": [ {"avstar": "https://img.mingdao.com/UserAvatar/48X48/38a88a3c-08c9-40e2-82fd-5ea87328dd00.jpg", "avstar100": "https://img.mingdao.com/UserAvatar/100X100/38a88a3c-08c9-40e2-82fd-5ea87328dd00.jpg", "department": "技术", "email": "94427159@qq.com", "id": "38a88a3c-08c9-40e2-82fd-5ea87328dd00", "job": "前端", "mobilephone": "18600988825", "name": "赵阳" }, {"avstar": "https://img.mingdao.com/UserAvatar/48X48/default.gif", "avstar100": "https://img.mingdao.com/UserAvatar/100X100/default.gif", "department": "开发部", "email": "zhenjiaWang@gmail.com", "id": "d5e38abd-7772-4df6-b30a-97872c5d1e6e", "job": "CTO", "mobilephone": "13488725292", "name": "王振佳" }, {"avstar": "https://img.mingdao.com/UserAvatar/48X48/default.gif", "avstar100": "https://img.mingdao.com/UserAvatar/100X100/default.gif", "department": "产品", "email": "154839405@qq.com", "id": "bc66f11a-f222-44d1-89cb-4e3ce11ddf3c", "job": "UI", "mobilephone": "", "name": "oddetta" } ] }}
+    public static List<User> getUserAllForInstall(String timeStamp, String nonce, String appkey, String appSecret,String companyId) throws Exception {
+        List<User> userList = null;
+        String signature=null;
+        if(StringUtils.isNotBlank(timeStamp)&&StringUtils.isNotBlank(nonce)&&StringUtils.isNotBlank(appkey)&&StringUtils.isNotBlank(appSecret)){
+            if(StringUtils.isNotBlank(companyId)){
+                signature= SignatureUtil.getSignature(timeStamp,nonce,"",appkey,appSecret);
+                if(StringUtils.isNotBlank(signature)){
+                    Map<String, String> params = new HashMap<String, String>();
+                    params.put("format", "json");
+                    params.put("signature", signature);
+                    params.put("timestamp", timeStamp);
+                    params.put("nonce", nonce);
+                    params.put("app_key", appkey);
+                    params.put("pid", companyId);
+                    ResponseObject responseObject = requestAPI(params, URI.USER_ALL_FOR_INSTALL, RequestType.POST);
+                    if (responseObject != null) {
+                        if (!responseObject.isError()) {
+                            String result = responseObject.getResult();
+                            if (StringUtils.isNotBlank(result)) {
+                                JSONObject rootObject = JSONObject.fromObject(result);
+                                if (rootObject != null) {
+                                    JSONArray userArray = rootObject.getJSONArray("users");
+                                    if (userArray != null && !userArray.isEmpty()) {
+                                        userList = new ArrayList<User>();
+                                        for (int i = 0; i < userArray.size(); i++) {
+                                            JSONObject obj = userArray.getJSONObject(i);
+                                            if (obj != null) {
+                                                User user = new User();
+                                                user.setAvstar(obj.getString("avstar"));
+                                                user.setAvstar100(obj.getString("avstar100"));
+                                                user.setDepartment(obj.getString("department"));
+                                                user.setEmail(obj.getString("email"));
+                                                user.setId(obj.getString("id"));
+                                                user.setJob(obj.getString("job"));
+                                                user.setMobilePhone(obj.getString("mobilephone"));
+                                                user.setWork_site(obj.getString("work_site"));
+                                                user.setJob_number(obj.getString("job_number"));
+                                                user.setName(obj.getString("name"));
+                                                userList.add(user);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return userList;
+    }
     public static List<User> getUserAll(String accessToken) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("format", "json");

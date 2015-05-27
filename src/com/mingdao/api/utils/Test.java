@@ -1,7 +1,10 @@
 package com.mingdao.api.utils;
 
 import com.mingdao.api.crm.RequestCrm;
+import com.mingdao.api.entity.User;
 import com.mingdao.api.user.RequestUser;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,7 +14,7 @@ import com.mingdao.api.user.RequestUser;
  * To change this template use File | Settings | File Templates.
  */
 public class Test {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
 //        jiami 6b9babe92cc95941c7fac5154f7dc348b27ea381
 //        app 43BFFB491351619090BAE825291F1CDC
 //        timestamp 1384419666896
@@ -26,13 +29,21 @@ public class Test {
 
         String signature="3d1f222c70e9a93feb8c7dde887e0abc4b3dbe8d";
         String timestamp="1429639522";
-        String nonce="8722";
+        String nonce="1111";
         String content="";
         String laSignature = SignatureUtil.getSignature(timestamp, nonce, content, "16488A907ECDC527B977B94C52CC3B", "8CF94C4DF0E82D12E344244AD80F05C");
         System.out.println(content);
         System.out.println(signature);
         System.out.println(laSignature);
 
-        RequestCrm.getOwner("7103DD4E-29D0-402A-99D6-B356C3A13518","C9C0F815FE436BC7F804FA062B91236CAC599643","dadacc77-5e18-4805-a5db-a60d084f74bc");
+
+        List<User> userList = RequestUser.getUserAllForInstall(timestamp, nonce, "16488A907ECDC527B977B94C52CC3B", "8CF94C4DF0E82D12E344244AD80F05C", "fe288386-3d26-4eab-b5d2-51eeab82a7f9");
+
+        if (userList != null && !userList.isEmpty()) {
+            for(User user:userList){
+                System.out.println(user.getName());
+            }
+        }
+//        RequestCrm.getOwner("7103DD4E-29D0-402A-99D6-B356C3A13518","C9C0F815FE436BC7F804FA062B91236CAC599643","dadacc77-5e18-4805-a5db-a60d084f74bc");
     }
 }

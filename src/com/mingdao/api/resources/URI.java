@@ -24,6 +24,8 @@ public class URI {
     /**
      * ********************USER********************
      */
+    public static final String USER_ALL_FOR_INSTALL = "http://api2.mingdao.com/mdprivate/user/getall.aspx";
+
     public static final String USER_ALL = "https://api.mingdao.com/user/all";
 
     public static final String USER_SEARCH = "https://api.mingdao.com/user/search";
