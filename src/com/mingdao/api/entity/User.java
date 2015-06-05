@@ -56,7 +56,7 @@ public class User implements Serializable {
 
     private String licenseDesc;
 
-    private String status;
+    private Integer status;
 
     private String statusDesc;
     
@@ -229,11 +229,11 @@ public class User implements Serializable {
         this.licenseDesc = licenseDesc;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

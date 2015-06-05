@@ -60,6 +60,7 @@ public class RequestUser extends CommonSupport {
                                                 user.setWork_site(obj.getString("work_site"));
                                                 user.setJob_number(obj.getString("job_number"));
                                                 user.setName(obj.getString("name"));
+                                                user.setStatus(obj.getInt("status"));
                                                 userList.add(user);
                                             }
                                         }
@@ -102,6 +103,7 @@ public class RequestUser extends CommonSupport {
                                     user.setWork_site(obj.getString("work_site"));
                                     user.setJob_number(obj.getString("job_number"));
                                     user.setName(obj.getString("name"));
+                                    user.setStatus(obj.getInt("status"));
                                     userList.add(user);
                                 }
                             }
@@ -142,6 +144,7 @@ public class RequestUser extends CommonSupport {
                                     user.setWork_site(obj.getString("work_site"));
                                     user.setJob_number(obj.getString("job_number"));
                                     user.setName(obj.getString("name"));
+                                    user.setStatus(obj.getInt("status"));
                                     userList.add(user);
                                 }
                             }
@@ -191,6 +194,7 @@ public class RequestUser extends CommonSupport {
                                     user.setWork_site(obj.getString("work_site"));
                                     user.setJob_number(obj.getString("job_number"));
                                     user.setName(obj.getString("name"));
+                                    user.setStatus(obj.getInt("status"));
                                     userList.add(user);
                                 }
                             }
@@ -235,7 +239,7 @@ public class RequestUser extends CommonSupport {
                                     user.setWork_site(obj.getString("work_site"));
                                     user.setJob_number(obj.getString("job_number"));
                                     user.setName(obj.getString("name"));
-
+                                    user.setStatus(obj.getInt("status"));
                                     userList.add(user);
                                 }
                             }
@@ -282,6 +286,7 @@ public class RequestUser extends CommonSupport {
                                         user.setName(obj.getString("name"));
                                         user.setWork_site(obj.getString("work_site"));
                                         user.setJob_number(obj.getString("job_number"));
+                                        user.setStatus(obj.getInt("status"));
                                         userMapList.put(user.getId(), user);
                                     }
                                 }
@@ -329,8 +334,7 @@ public class RequestUser extends CommonSupport {
                             user.setJob_number(userObject.getString("job_number"));
                             user.setFollowedStatus(userObject.getString("followed_status"));
                             user.setLicense(userObject.getString("license"));
-                            user.setStatus(userObject.getString("status"));
-
+                            user.setStatus(userObject.getInt("status"));
                             JSONObject project=userObject.getJSONObject("project");
                             if(project!=null){
                                 NetWork netWork=new NetWork();
