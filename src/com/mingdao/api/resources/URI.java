@@ -24,7 +24,9 @@ public class URI {
     /**
      * ********************USER********************
      */
-    public static final String USER_ALL_FOR_INSTALL = "http://api2.mingdao.com/mdprivate/user/getall.aspx";
+    public static final String USER_ALL_FOR_INSTALL = "https://api.mingdao.com/mdprivate/user/getall.aspx";
+
+
 
     public static final String USER_ALL = "https://api.mingdao.com/user/all";
 
@@ -151,6 +153,16 @@ public class URI {
 
     public static final String GROUP_INVITE = "https://api.mingdao.com/group/invite";
 
+    /**
+     * ********************DEPT********************
+     */
+
+
+    public static final String DEPT_ALL = "https://api.mingdao.com/mdprivate/group/getDepartments";
+
+    public static final String DEPT_ADD = "https://api.mingdao.com/mdprivate/group/addDepartment";
+
+    public static final String DEPT_EDIT="https://api.mingdao.com/mdprivate/group/editDepartment";
 
     /**
      * ********************TASK********************
