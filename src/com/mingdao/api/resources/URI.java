@@ -158,11 +158,14 @@ public class URI {
      */
 
 
-    public static final String DEPT_ALL = "https://api.mingdao.com/mdprivate/group/getDepartments";
 
-    public static final String DEPT_ADD = "https://api.mingdao.com/mdprivate/group/addDepartment";
+    public static final String DEPT_ALL = "https://api2.mingdao.com/mdprivate/group/getDepartments.aspx";
 
-    public static final String DEPT_EDIT="https://api.mingdao.com/mdprivate/group/editDepartment";
+    public static final String DEPT_ALL_FOR_INSTALL = "http://api2.mingdao.com/mdprivate/group/getALLDep.aspx";
+
+    public static final String DEPT_ADD = "https://api2.mingdao.com/mdprivate/group/addDepartment.aspx";
+
+    public static final String DEPT_EDIT="https://api2.mingdao.com/mdprivate/group/editDepartment.aspx";
 
     /**
      * ********************TASK********************
