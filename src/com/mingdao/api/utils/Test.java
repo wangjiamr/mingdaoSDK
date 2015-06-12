@@ -1,6 +1,8 @@
 package com.mingdao.api.utils;
 
 import com.mingdao.api.crm.RequestCrm;
+import com.mingdao.api.dept.RequestDept;
+import com.mingdao.api.entity.Department;
 import com.mingdao.api.entity.User;
 import com.mingdao.api.user.RequestUser;
 
@@ -31,17 +33,23 @@ public class Test {
         String timestamp="1429639522";
         String nonce="1111";
         String content="";
-        String laSignature = SignatureUtil.getSignature(timestamp, nonce, content, "16488A907ECDC527B977B94C52CC3B", "8CF94C4DF0E82D12E344244AD80F05C");
-        System.out.println(content);
-        System.out.println(signature);
-        System.out.println(laSignature);
-
-
-        List<User> userList = RequestUser.getUserAllForInstall(timestamp, nonce, "16488A907ECDC527B977B94C52CC3B", "8CF94C4DF0E82D12E344244AD80F05C", "fe288386-3d26-4eab-b5d2-51eeab82a7f9");
-
-        if (userList != null && !userList.isEmpty()) {
-            for(User user:userList){
-                System.out.println(user.getName());
+//        String laSignature = SignatureUtil.getSignature(timestamp, nonce, content, "16488A907ECDC527B977B94C52CC3B", "8CF94C4DF0E82D12E344244AD80F05C");
+//        System.out.println(content);
+//        System.out.println(signature);
+//        System.out.println(laSignature);
+//
+//
+//        List<User> userList = RequestUser.getUserAllForInstall(timestamp, nonce, "16488A907ECDC527B977B94C52CC3B", "8CF94C4DF0E82D12E344244AD80F05C", "fe288386-3d26-4eab-b5d2-51eeab82a7f9");
+//
+//        if (userList != null && !userList.isEmpty()) {
+//            for(User user:userList){
+//                System.out.println(user.getName());
+//            }
+//        }
+        List<Department> deptList=RequestDept.getDeptAllForInstall(timestamp, nonce, "16488A907ECDC527B977B94C52CC3B", "8CF94C4DF0E82D12E344244AD80F05C", "fe288386-3d26-4eab-b5d2-51eeab82a7f9");
+        if (deptList != null && !deptList.isEmpty()) {
+            for(Department department:deptList){
+                System.out.println(department.getName());
             }
         }
 //        RequestCrm.getOwner("7103DD4E-29D0-402A-99D6-B356C3A13518","C9C0F815FE436BC7F804FA062B91236CAC599643","dadacc77-5e18-4805-a5db-a60d084f74bc");

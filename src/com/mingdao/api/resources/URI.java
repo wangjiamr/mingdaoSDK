@@ -161,7 +161,7 @@ public class URI {
 
     public static final String DEPT_ALL = "https://api2.mingdao.com/mdprivate/group/getDepartments.aspx";
 
-    public static final String DEPT_ALL_FOR_INSTALL = "http://api2.mingdao.com/mdprivate/group/getALLDep.aspx";
+    public static final String DEPT_ALL_FOR_INSTALL = "https://api2.mingdao.com/mdprivate/group/getALLDep.aspx";
 
     public static final String DEPT_ADD = "https://api2.mingdao.com/mdprivate/group/addDepartment.aspx";
 

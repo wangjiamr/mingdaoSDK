@@ -101,6 +101,8 @@ public class HttpURLConnectionUtil {
                 responseObject.setUri(httpURLConnection.getURL().toString());
                 responseObject.setStatusCode(httpURLConnection.getResponseCode());
                 responseObject.setResult(httpResult);
+            }else{
+                System.out.println("request:" + uri + "  responseCode:" + response);
             }
         } catch (IOException e) {
             e.printStackTrace();
