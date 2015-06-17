@@ -68,6 +68,8 @@ public class User implements Serializable {
 
     private NetWork netWork;
 
+    private String unitName;
+
     public String getAvstar() {
         return avstar;
     }
@@ -294,5 +296,13 @@ public class User implements Serializable {
 
     public void setNetWork(NetWork netWork) {
         this.netWork = netWork;
+    }
+
+    public String getUnitName() {
+        return unitName;
+    }
+
+    public void setUnitName(String unitName) {
+        this.unitName = unitName;
     }
 }

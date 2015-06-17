@@ -335,6 +335,7 @@ public class RequestUser extends CommonSupport {
                             user.setFollowedStatus(userObject.getString("followed_status"));
                             user.setLicense(userObject.getString("license"));
                             user.setStatus(userObject.getInt("status"));
+                            user.setUnitName(userObject.getString("unit_name"));
                             JSONObject project=userObject.getJSONObject("project");
                             if(project!=null){
                                 NetWork netWork=new NetWork();
