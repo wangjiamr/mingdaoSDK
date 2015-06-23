@@ -44,7 +44,7 @@ public class RequestCalendar extends CommonSupport {
         }
         params.put("c_allday", allday+"");
         String calendarID = null;
-        ResponseObject responseObject = requestAPI(params, URI.CALENDAR_CREATE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.CALENDAR_CREATE, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -65,7 +65,7 @@ public class RequestCalendar extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("c_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.CALENDAR_EXIT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.CALENDAR_EXIT, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

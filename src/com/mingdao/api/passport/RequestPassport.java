@@ -25,7 +25,7 @@ public class RequestPassport extends CommonSupport {
         Map<String, String> params = new HashMap<String, String>();
         params.put("format", "json");
         params.put("access_token", accessToken);
-        ResponseObject responseObject = requestAPI(params, URI.PASSPORT_LOGOUT, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.PASSPORT_LOGOUT, RequestType.POST);
         int count = -1;
         if (responseObject != null) {
             if (!responseObject.isError()) {
@@ -46,7 +46,7 @@ public class RequestPassport extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         User user = null;
-        ResponseObject responseObject = requestAPI(params, URI.PASSPORT_DETAIL, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.PASSPORT_DETAIL, RequestType.GET);
         int count = -1;
         if (responseObject != null) {
             if (!responseObject.isError()) {
@@ -100,7 +100,7 @@ public class RequestPassport extends CommonSupport {
         params.put("access_token", accessToken);
         String locale = null;
         String theme_type=null;
-        ResponseObject responseObject = requestAPI(params, URI.PASSPORT_GET_SETTING, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.PASSPORT_GET_SETTING, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

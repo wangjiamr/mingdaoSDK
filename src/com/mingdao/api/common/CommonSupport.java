@@ -1,11 +1,9 @@
 package com.mingdao.api.common;
 
+import com.mingdao.api.entity.AppConfig;
 import com.mingdao.api.entity.ResponseObject;
 import com.mingdao.api.htf.core.NeteaseEncrypt;
-import com.mingdao.api.utils.HttpClientUtil;
-import com.mingdao.api.utils.HttpURLConnectionUtil;
-import com.mingdao.api.utils.HttpsUtil;
-import com.mingdao.api.utils.RequestType;
+import com.mingdao.api.utils.*;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 
@@ -19,6 +17,17 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class CommonSupport {
+    protected static AppConfig appConfig = AppConfigUtil.create();
+    
+    protected static String getOaUrl(){
+        return appConfig.getOaUri();
+    }
+    protected static String getMingdaoUrl(){
+        return appConfig.getMingdaoUri();
+    }
+    protected static String getHrUrl(){
+        return appConfig.getHrUri();
+    }
     public static ResponseObject requestAPI(Map<String, String> params, String URI, RequestType requestType) throws Exception {
         ResponseObject responseObject = null;
         if (requestType == RequestType.GET) {

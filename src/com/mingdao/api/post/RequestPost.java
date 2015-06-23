@@ -26,7 +26,7 @@ public class RequestPost extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<Group> groupList = null;
-        ResponseObject responseObject = requestAPI(params, URI.POST_ALL, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.POST_ALL, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -49,7 +49,7 @@ public class RequestPost extends CommonSupport {
             params.put("p_msg", msg);
         }
         String postID = null;
-        ResponseObject responseObject = requestAPI(params, URI.POST_UPLOAD, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.POST_UPLOAD, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

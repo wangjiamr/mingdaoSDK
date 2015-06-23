@@ -29,7 +29,7 @@ public class RequestMessage extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<Message> messageList = null;
-        ResponseObject responseObject = requestAPI(params, URI.MESSAGE_ALL, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.MESSAGE_ALL, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -79,7 +79,7 @@ public class RequestMessage extends CommonSupport {
             params.put("pageindex", pageIndex + "");
         }
         List<Message> messageList = null;
-        ResponseObject responseObject = requestAPI(params, URI.MESSAGE_LIST, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.MESSAGE_LIST, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -115,7 +115,7 @@ public class RequestMessage extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.MESSAGE_UN_READ_COUNT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.MESSAGE_UN_READ_COUNT, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -136,7 +136,7 @@ public class RequestMessage extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("m_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.MESSAGE_RED, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.MESSAGE_RED, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -157,7 +157,7 @@ public class RequestMessage extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("m_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.MESSAGE_DELETE, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.MESSAGE_DELETE, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -188,7 +188,7 @@ public class RequestMessage extends CommonSupport {
             params.put("type", type + "");
         }
         String messageID = null;
-        ResponseObject responseObject = requestAPI(params, URI.MESSAGE_CREATE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.MESSAGE_CREATE, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -219,7 +219,7 @@ public class RequestMessage extends CommonSupport {
                 if(pid.equals("fe288386-3d26-4eab-b5d2-51eeab82a7f9")){
                     url=URI.MESSAGE_CREATE_SYS2;
                 }else{
-                    url=URI.MESSAGE_CREATE_SYS;
+                    url=getMingdaoUrl()+URI.MESSAGE_CREATE_SYS;
                 }
             }
             ResponseObject responseObject = requestAPI(params, url, RequestType.POST);

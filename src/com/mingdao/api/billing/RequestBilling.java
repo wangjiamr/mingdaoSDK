@@ -29,7 +29,7 @@ public class RequestBilling extends CommonSupport {
         params.put("nonce", nonce);
         params.put("content", content);
         Billing billing=null;
-        ResponseObject responseObject = requestAPI(params, URI.BILLING_CREATE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.BILLING_CREATE, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -59,7 +59,7 @@ public class RequestBilling extends CommonSupport {
         params.put("nonce", nonce);
         params.put("content", content);
         Billing billing=null;
-        ResponseObject responseObject = requestAPI(params, URI.BILLING_CREATE_AUTO, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.BILLING_CREATE_AUTO, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -84,7 +84,7 @@ public class RequestBilling extends CommonSupport {
         params.put("nonce", nonce);
         params.put("content", content);
         Billing billing=null;
-        ResponseObject responseObject = requestAPI(params, URI.BILLING_CLOSE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.BILLING_CLOSE, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -109,7 +109,7 @@ public class RequestBilling extends CommonSupport {
         params.put("nonce", nonce);
         params.put("content", content);
         Billing billing=null;
-        ResponseObject responseObject = requestAPI(params, URI.BILLING_CLOSE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.BILLING_CLOSE, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

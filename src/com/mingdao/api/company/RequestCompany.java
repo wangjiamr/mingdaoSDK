@@ -29,7 +29,7 @@ public class RequestCompany extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         NetWork netWork=null;
-        ResponseObject responseObject = requestAPI(params, URI.COMPANY_DETAIL, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.COMPANY_DETAIL, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -63,7 +63,7 @@ public class RequestCompany extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.COMPANY_GET_ADMIN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.COMPANY_GET_ADMIN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -102,7 +102,7 @@ public class RequestCompany extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.COMPANY_ADD_ADMIN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.COMPANY_ADD_ADMIN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -123,7 +123,7 @@ public class RequestCompany extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.COMPANY_DELETE_ADMIN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.COMPANY_DELETE_ADMIN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -144,7 +144,7 @@ public class RequestCompany extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.COMPANY_IS_ADMIN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.COMPANY_IS_ADMIN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -167,7 +167,7 @@ public class RequestCompany extends CommonSupport {
         params.put("app_key", app_key);
         params.put("app_secret", app_secret);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.COMPANY_PAIDUSERSCOUNT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.COMPANY_PAIDUSERSCOUNT, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

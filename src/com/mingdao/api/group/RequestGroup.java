@@ -32,7 +32,7 @@ public class RequestGroup extends CommonSupport {
             params.put("keywords", keywords);
         }
         List<Group> groupList = null;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_ALL, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.GROUP_ALL, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -91,7 +91,7 @@ public class RequestGroup extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("g_id", id);
         Group group = null;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_DETAIL, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.GROUP_DETAIL, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -141,7 +141,7 @@ public class RequestGroup extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<Group> groupList = null;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_MY_CREATED, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.GROUP_MY_CREATED, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -198,7 +198,7 @@ public class RequestGroup extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<Group> groupList = null;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_MY_JOINED, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.GROUP_MY_JOINED, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -256,7 +256,7 @@ public class RequestGroup extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("g_id", id);
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_USER, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.GROUP_USER, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -297,7 +297,7 @@ public class RequestGroup extends CommonSupport {
         params.put("g_id", id);
         params.put("email", email);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_INVITE, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.GROUP_INVITE, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -318,7 +318,7 @@ public class RequestGroup extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("g_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_CLOSE, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.GROUP_CLOSE, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -339,7 +339,7 @@ public class RequestGroup extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("g_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_OPEN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.GROUP_OPEN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -360,7 +360,7 @@ public class RequestGroup extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("g_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_EXIT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.GROUP_EXIT, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -381,7 +381,7 @@ public class RequestGroup extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("g_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_DELETE, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.GROUP_DELETE, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -402,7 +402,7 @@ public class RequestGroup extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("g_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.GROUP_JOIN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.GROUP_JOIN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

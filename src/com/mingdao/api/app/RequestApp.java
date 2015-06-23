@@ -23,13 +23,12 @@ import java.util.Map;
  */
 public class RequestApp extends CommonSupport {
 
-
     public static List<User> getAdminUser(String accessToken) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.APP_GET_ADMIN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.APP_GET_ADMIN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -68,7 +67,7 @@ public class RequestApp extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.APP_ADD_ADMIN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.APP_ADD_ADMIN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -89,7 +88,7 @@ public class RequestApp extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.APP_DELETE_ADMIN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.APP_DELETE_ADMIN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -110,7 +109,7 @@ public class RequestApp extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.APP_IS_ADMIN, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.APP_IS_ADMIN, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -133,7 +132,7 @@ public class RequestApp extends CommonSupport {
         params.put("u_id", uid);
         params.put("p_id", pid);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.APP_ADD_NOTICE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.APP_ADD_NOTICE, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -156,7 +155,7 @@ public class RequestApp extends CommonSupport {
         params.put("u_id", uid);
         params.put("p_id", pid);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.APP_READ_NOTICE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.APP_READ_NOTICE, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

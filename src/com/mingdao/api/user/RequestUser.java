@@ -79,7 +79,7 @@ public class RequestUser extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_ALL, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_ALL, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -120,7 +120,7 @@ public class RequestUser extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_GET_USER_METIONED, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_GET_USER_METIONED, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -170,7 +170,7 @@ public class RequestUser extends CommonSupport {
             params.put("dep", dep);
         }
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_SEARCH, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.USER_SEARCH, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -215,7 +215,7 @@ public class RequestUser extends CommonSupport {
             params.put("u_ids", ids);
         }
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_LIST, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_LIST, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -262,7 +262,7 @@ public class RequestUser extends CommonSupport {
                 sb.append(uid + ",");
             }
             params.put("u_ids", sb.toString());
-            ResponseObject responseObject = requestAPI(params, URI.USER_LIST, RequestType.POST);
+            ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.USER_LIST, RequestType.POST);
             if (responseObject != null) {
                 if (!responseObject.isError()) {
                     String result = responseObject.getResult();
@@ -305,7 +305,7 @@ public class RequestUser extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         User user = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_DETAIL, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.USER_DETAIL, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -359,7 +359,7 @@ public class RequestUser extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_FOLLOWED, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.USER_FOLLOWED, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -398,7 +398,7 @@ public class RequestUser extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<Department> departmentList = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_DEPARTMENT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.USER_DEPARTMENT, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -431,7 +431,7 @@ public class RequestUser extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.USER_ADD_FOLLOWED, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_ADD_FOLLOWED, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -452,7 +452,7 @@ public class RequestUser extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.USER_DELETE_FOLLOWED, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.USER_DELETE_FOLLOWED, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -476,7 +476,7 @@ public class RequestUser extends CommonSupport {
         params.put("fullname", fullName);
         params.put("msg", msg);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.USER_INVITE, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_INVITE, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -497,7 +497,7 @@ public class RequestUser extends CommonSupport {
         params.put("format", "json");
         params.put("access_token", accessToken);
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_FREQUENT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_FREQUENT, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -537,7 +537,7 @@ public class RequestUser extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.USER_ADD_FREQUENT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_ADD_FREQUENT, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -558,7 +558,7 @@ public class RequestUser extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.USER_DELETE_FREQUENT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_DELETE_FREQUENT, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -579,7 +579,7 @@ public class RequestUser extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         User managerUser = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_GET_MANAGER_USER, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_GET_MANAGER_USER, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -626,7 +626,7 @@ public class RequestUser extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("u_id", id);
         List<User> userList = null;
-        ResponseObject responseObject = requestAPI(params, URI.USER_GET_MANAGER_USER_TREE, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_GET_MANAGER_USER_TREE, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

@@ -50,6 +50,9 @@ public class AppConfigUtil {
             appConfig.setAppSecret(propertiesConfig.getString("app_secret"));
             appConfig.setRedirectUri(propertiesConfig.getString("redirect_uri"));
             appConfig.setHtfUri(propertiesConfig.getString("htf_uri"));
+            appConfig.setMingdaoUri(propertiesConfig.getString("mingdao_uri"));
+            appConfig.setOaUri(propertiesConfig.getString("oa_uri"));
+            appConfig.setHrUri(propertiesConfig.getString("hr_uri"));
         }
     }
 }

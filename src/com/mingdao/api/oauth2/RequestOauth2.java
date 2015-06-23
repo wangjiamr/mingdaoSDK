@@ -35,7 +35,7 @@ public class RequestOauth2 extends CommonSupport {
         params.put("username", userName);
         params.put("password", password);
         List<NetWork> netWorkList = null;
-        ResponseObject responseObject = requestAPI(params, URI.OAUTH2_ACCESS_TOKEN, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.OAUTH2_ACCESS_TOKEN, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -89,7 +89,7 @@ public class RequestOauth2 extends CommonSupport {
         params.put("username", userName);
         params.put("password", password);
         OAuth2Object oAuth2Object = null;
-        ResponseObject responseObject = requestAPI(params, URI.OAUTH2_ACCESS_TOKEN, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.OAUTH2_ACCESS_TOKEN, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -123,7 +123,7 @@ public class RequestOauth2 extends CommonSupport {
         params.put("code", code);
         params.put("redirect_uri", appConfig.getRedirectUri());
         OAuth2Object oAuth2Object = null;
-        ResponseObject responseObject = requestAPI(params, URI.OAUTH2_ACCESS_TOKEN, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.OAUTH2_ACCESS_TOKEN, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -151,7 +151,7 @@ public class RequestOauth2 extends CommonSupport {
         params.put("refresh_token", accessToken);
         params.put("redirect_uri", appConfig.getRedirectUri());
         OAuth2Object oAuth2Object = null;
-        ResponseObject responseObject = requestAPI(params, URI.OAUTH2_ACCESS_TOKEN, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.OAUTH2_ACCESS_TOKEN, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

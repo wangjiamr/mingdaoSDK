@@ -37,7 +37,7 @@ public class RequestTask extends CommonSupport {
         if(StringUtils.isNotBlank(taskMUID)){
             params.put("t_mids", taskMUID);
         }
-        ResponseObject responseObject = requestAPI(params, URI.TASK_CREATE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.TASK_CREATE, RequestType.POST);
         String taskID = "";
         if (responseObject != null) {
             if (!responseObject.isError()) {

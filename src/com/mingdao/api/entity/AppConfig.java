@@ -19,6 +19,12 @@ public class AppConfig implements Serializable {
 
     private String htfUri;
 
+    private String mingdaoUri;
+
+    private String oaUri;
+
+    private String hrUri;
+
     public String getAppKey() {
         return appKey;
     }
@@ -49,5 +55,29 @@ public class AppConfig implements Serializable {
 
     public void setHtfUri(String htfUri) {
         this.htfUri = htfUri;
+    }
+
+    public String getMingdaoUri() {
+        return mingdaoUri;
+    }
+
+    public void setMingdaoUri(String mingdaoUri) {
+        this.mingdaoUri = mingdaoUri;
+    }
+
+    public String getOaUri() {
+        return oaUri;
+    }
+
+    public void setOaUri(String oaUri) {
+        this.oaUri = oaUri;
+    }
+
+    public String getHrUri() {
+        return hrUri;
+    }
+
+    public void setHrUri(String hrUri) {
+        this.hrUri = hrUri;
     }
 }

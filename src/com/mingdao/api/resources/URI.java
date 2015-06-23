@@ -14,11 +14,12 @@ public class URI {
      */
 
 
-    public static final String OAUTH2_AUTHORIZE = "https://api.mingdao.com/oauth2/authorize";
 
-    public static final String OAUTH2_ACCESS_TOKEN = "https://api.mingdao.com/oauth2/access_token";
+    public static final String OAUTH2_AUTHORIZE = "/oauth2/authorize";
 
-    public static final String OAUTH2_EMAIL = "https://api.mingdao.com/oauth2/verify_email";
+    public static final String OAUTH2_ACCESS_TOKEN = "/oauth2/access_token";
+
+    public static final String OAUTH2_EMAIL = "/oauth2/verify_email";
 
 
     /**
@@ -28,35 +29,35 @@ public class URI {
 
 
 
-    public static final String USER_ALL = "https://api.mingdao.com/user/all";
+    public static final String USER_ALL = "/user/all";
 
-    public static final String USER_SEARCH = "https://api.mingdao.com/user/search";
+    public static final String USER_SEARCH = "/user/search";
 
-    public static final String USER_LIST = "https://api.mingdao.com/user/list";
+    public static final String USER_LIST = "/user/list";
 
-    public static final String USER_DETAIL = "https://api.mingdao.com/user/detail";
+    public static final String USER_DETAIL = "/user/detail";
 
-    public static final String USER_FOLLOWED = "https://api.mingdao.com/user/followed";
+    public static final String USER_FOLLOWED = "/user/followed";
 
-    public static final String USER_DEPARTMENT = "https://api.mingdao.com/user/department";
+    public static final String USER_DEPARTMENT = "/user/department";
 
-    public static final String USER_ADD_FOLLOWED = "https://api.mingdao.com/user/add_followed";
+    public static final String USER_ADD_FOLLOWED = "/user/add_followed";
 
-    public static final String USER_DELETE_FOLLOWED = "https://api.mingdao.com/user/delete_followed";
+    public static final String USER_DELETE_FOLLOWED = "/user/delete_followed";
 
-    public static final String USER_INVITE = "https://api.mingdao.com/user/invite";
+    public static final String USER_INVITE = "/user/invite";
 
-    public static final String USER_FREQUENT = "https://api.mingdao.com/user/frequent";
+    public static final String USER_FREQUENT = "/user/frequent";
 
-    public static final String USER_ADD_FREQUENT = "https://api.mingdao.com/user/add_frequent";
+    public static final String USER_ADD_FREQUENT = "/user/add_frequent";
 
-    public static final String USER_DELETE_FREQUENT = "https://api.mingdao.com/user/delete_frequent";
+    public static final String USER_DELETE_FREQUENT = "/user/delete_frequent";
 
-    public static final String USER_GET_MANAGER_USER = "https://api.mingdao.com/user/get_managerUser";
+    public static final String USER_GET_MANAGER_USER = "/user/get_managerUser";
 
-    public static final String USER_GET_MANAGER_USER_TREE = "https://api.mingdao.com/user/get_managerUserTree";
+    public static final String USER_GET_MANAGER_USER_TREE = "/user/get_managerUserTree";
 
-    public static final String USER_GET_USER_METIONED = "https://api.mingdao.com/user/get_userMetioned";
+    public static final String USER_GET_USER_METIONED = "/user/get_userMetioned";
 
 
 
@@ -65,61 +66,61 @@ public class URI {
     /**
      * ********************MESSAGE********************
      */
-    public static final String MESSAGE_ALL = "https://api.mingdao.com/message/all";
+    public static final String MESSAGE_ALL = "/message/all";
 
-    public static final String MESSAGE_LIST = "https://api.mingdao.com/message/list";
+    public static final String MESSAGE_LIST = "/message/list";
 
-    public static final String MESSAGE_UN_READ_COUNT = "https://api.mingdao.com/message/unreadcount";
+    public static final String MESSAGE_UN_READ_COUNT = "/message/unreadcount";
 
-    public static final String MESSAGE_CREATE = "https://api.mingdao.com/message/create";
+    public static final String MESSAGE_CREATE = "/message/create";
 
-    public static final String MESSAGE_CREATE_SYS = "https://api.mingdao.com/message/create_sys";
+    public static final String MESSAGE_CREATE_SYS = "/message/create_sys";
 
     public static final String MESSAGE_CREATE_SYS2 = "https://api2.mingdao.com/message/create_sys";
 
-    public static final String MESSAGE_DELETE = "https://api.mingdao.com/message/delete";
+    public static final String MESSAGE_DELETE = "/message/delete";
 
-    public static final String MESSAGE_RED = "https://api.mingdao.com/message/read";
+    public static final String MESSAGE_RED = "/message/read";
 
     /**
      * ********************CALENDAR********************
      */
 
-    public static final String CALENDAR_CREATE = "https://api.mingdao.com/calendar/create";
+    public static final String CALENDAR_CREATE = "/calendar/create";
 
-    public static final String CALENDAR_EXIT = "https://api.mingdao.com/calendar/exit";
+    public static final String CALENDAR_EXIT = "/calendar/exit";
 
 
     /**
      * ********************PASSPORT********************
      */
-    public static final String PASSPORT_DETAIL = "https://api.mingdao.com/passport/detail";
+    public static final String PASSPORT_DETAIL = "/passport/detail";
 
-    public static final String PASSPORT_UN_READ_COUNT = "https://api.mingdao.com/passport/unreadcount";
+    public static final String PASSPORT_UN_READ_COUNT = "/passport/unreadcount";
 
-    public static final String PASSPORT_EDIT = "https://api.mingdao.com/passport/edit";
+    public static final String PASSPORT_EDIT = "/passport/edit";
 
-    public static final String PASSPORT_EDIT_AVSTAR = "https://api.mingdao.com/passport/edit_avstar";
+    public static final String PASSPORT_EDIT_AVSTAR = "/passport/edit_avstar";
 
-    public static final String PASSPORT_LOGOUT = "https://api.mingdao.com/passport/logout";
+    public static final String PASSPORT_LOGOUT = "/passport/logout";
 
-    public static final String PASSPORT_GET_SETTING = "https://api.mingdao.com/passport/get_setting";
+    public static final String PASSPORT_GET_SETTING = "/passport/get_setting";
 
 
     /**
      * ********************COMPANY********************
      */
-    public static final String COMPANY_DETAIL = "https://api.mingdao.com/company/detail";
+    public static final String COMPANY_DETAIL = "/company/detail";
 
-    public static final String COMPANY_GET_ADMIN = "https://api.mingdao.com/company/get_admin";
+    public static final String COMPANY_GET_ADMIN = "/company/get_admin";
 
-    public static final String COMPANY_ADD_ADMIN = "https://api.mingdao.com/company/add_admin";
+    public static final String COMPANY_ADD_ADMIN = "/company/add_admin";
 
-    public static final String COMPANY_DELETE_ADMIN = "https://api.mingdao.com/company/delete_admin";
+    public static final String COMPANY_DELETE_ADMIN = "/company/delete_admin";
 
-    public static final String COMPANY_IS_ADMIN = "https://api.mingdao.com/company/is_admin";
+    public static final String COMPANY_IS_ADMIN = "/company/is_admin";
 
-    public static final String COMPANY_PAIDUSERSCOUNT = "https://api.mingdao.com/company/get_paiduserscount";
+    public static final String COMPANY_PAIDUSERSCOUNT = "/company/get_paiduserscount";
 
     /**
      * ********************CRM********************
@@ -129,29 +130,29 @@ public class URI {
     /**
      * ********************GROUP********************
      */
-    public static final String GROUP_ALL = "https://api.mingdao.com/group/all";
+    public static final String GROUP_ALL = "/group/all";
 
-    public static final String GROUP_DETAIL = "https://api.mingdao.com/group/detail";
+    public static final String GROUP_DETAIL = "/group/detail";
 
-    public static final String GROUP_MY_CREATED = "https://api.mingdao.com/group/my_created";
+    public static final String GROUP_MY_CREATED = "/group/my_created";
 
-    public static final String GROUP_MY_JOINED = "https://api.mingdao.com/group/my_joined";
+    public static final String GROUP_MY_JOINED = "/group/my_joined";
 
-    public static final String GROUP_USER = "https://api.mingdao.com/group/user";
+    public static final String GROUP_USER = "/group/user";
 
-    public static final String GROUP_CREATE = "https://api.mingdao.com/group/create";
+    public static final String GROUP_CREATE = "/group/create";
 
-    public static final String GROUP_EXIT = "https://api.mingdao.com/group/exit";
+    public static final String GROUP_EXIT = "/group/exit";
 
-    public static final String GROUP_JOIN = "https://api.mingdao.com/group/join";
+    public static final String GROUP_JOIN = "/group/join";
 
-    public static final String GROUP_CLOSE = "https://api.mingdao.com/group/close";
+    public static final String GROUP_CLOSE = "/group/close";
 
-    public static final String GROUP_OPEN = "https://api.mingdao.com/group/open";
+    public static final String GROUP_OPEN = "/group/open";
 
-    public static final String GROUP_DELETE = "https://api.mingdao.com/group/delete";
+    public static final String GROUP_DELETE = "/group/delete";
 
-    public static final String GROUP_INVITE = "https://api.mingdao.com/group/invite";
+    public static final String GROUP_INVITE = "/group/invite";
 
     /**
      * ********************DEPT********************
@@ -170,157 +171,167 @@ public class URI {
     /**
      * ********************TASK********************
      */
-    public static final String TASK_MY_JOINED = "https://api.mingdao.com/task/my_joined";
+    public static final String TASK_MY_JOINED = "/task/my_joined";
 
-    public static final String TASK_MY_JOINED_FINISHED = "https://api.mingdao.com/task/my_joined_finished";
+    public static final String TASK_MY_JOINED_FINISHED = "/task/my_joined_finished";
 
-    public static final String TASK_MY_ASSIGN = "https://api.mingdao.com/task/my_assign";
+    public static final String TASK_MY_ASSIGN = "/task/my_assign";
 
-    public static final String TASK_MY_ASSIGN_FINISHED = "https://api.mingdao.com/task/my_assign_finished";
+    public static final String TASK_MY_ASSIGN_FINISHED = "/task/my_assign_finished";
 
-    public static final String TASK_MY_CHARGE = "https://api.mingdao.com/task/my_charge";
+    public static final String TASK_MY_CHARGE = "/task/my_charge";
 
-    public static final String TASK_MY_CHARGE_FINISHED = "https://api.mingdao.com/task/my_charge_finished";
+    public static final String TASK_MY_CHARGE_FINISHED = "/task/my_charge_finished";
 
-    public static final String TASK_PROJECT = "https://api.mingdao.com/task/project";
+    public static final String TASK_PROJECT = "/task/project";
 
-    public static final String TASK_UN_READ_COUNT = "https://api.mingdao.com/task/unreadcount";
+    public static final String TASK_UN_READ_COUNT = "/task/unreadcount";
 
-    public static final String TASK_DETAIL = "https://api.mingdao.com/task/detail";
+    public static final String TASK_DETAIL = "/task/detail";
 
-    public static final String TASK_REPLY = "https://api.mingdao.com/task/reply";
+    public static final String TASK_REPLY = "/task/reply";
 
-    public static final String TASK_CREATE = "https://api.mingdao.com/task/create";
+    public static final String TASK_CREATE = "/task/create";
 
-    public static final String TASK_ADD_PROJECT = "https://api.mingdao.com/task/add_project";
+    public static final String TASK_ADD_PROJECT = "/task/add_project";
 
-    public static final String TASK_EDIT_TITLE = "https://api.mingdao.com/task/edit_title";
+    public static final String TASK_EDIT_TITLE = "/task/edit_title";
 
-    public static final String TASK_EDIT_DES = "https://api.mingdao.com/task/edit_des";
+    public static final String TASK_EDIT_DES = "/task/edit_des";
 
-    public static final String TASK_EDIT_CHARGE = "https://api.mingdao.com/task/edit_charge";
+    public static final String TASK_EDIT_CHARGE = "/task/edit_charge";
 
-    public static final String TASK_EDIT_EXPIRE_DATE = "https://api.mingdao.com/task/edit_expiredate";
+    public static final String TASK_EDIT_EXPIRE_DATE = "/task/edit_expiredate";
 
-    public static final String TASK_EDIT_PROJECT = "https://api.mingdao.com/task/edit_project";
+    public static final String TASK_EDIT_PROJECT = "/task/edit_project";
 
-    public static final String TASK_ADD_MEMBER = "https://api.mingdao.com/task/add_member";
+    public static final String TASK_ADD_MEMBER = "/task/add_member";
 
-    public static final String TASK_DELETE_MEMBER = "https://api.mingdao.com/task/delete_member";
+    public static final String TASK_DELETE_MEMBER = "/task/delete_member";
 
-    public static final String TASK_FINISH = "https://api.mingdao.com/task/finish";
+    public static final String TASK_FINISH = "/task/finish";
 
-    public static final String TASK_ADD_REPLY = "https://api.mingdao.com/task/addreply";
+    public static final String TASK_ADD_REPLY = "/task/addreply";
 
-    public static final String TASK_DELETE = "https://api.mingdao.com/task/delete";
+    public static final String TASK_DELETE = "/task/delete";
 
 
     /**
      * ********************VOTE********************
      */
-    public static final String VOTE_MY_JOINED = "https://api.mingdao.com/vote/my_joined";
+    public static final String VOTE_MY_JOINED = "/vote/my_joined";
 
-    public static final String VOTE_MY_CREATE = "https://api.mingdao.com/vote/my_create";
+    public static final String VOTE_MY_CREATE = "/vote/my_create";
 
-    public static final String VOTE_ALL = "https://api.mingdao.com/vote/all";
+    public static final String VOTE_ALL = "/vote/all";
 
-    public static final String VOTE_DETAIL = "https://api.mingdao.com/vote/detail";
+    public static final String VOTE_DETAIL = "/vote/detail";
 
-    public static final String VOTE_CAST_OPTIONS = "https://api.mingdao.com/vote/cast_options";
+    public static final String VOTE_CAST_OPTIONS = "/vote/cast_options";
 
     /**
      * ********************POST********************
      */
-    public static final String POST_FOLLOWED = "https://api.mingdao.com/post/followed";
+    public static final String POST_FOLLOWED = "/post/followed";
 
-    public static final String POST_ALL = "https://api.mingdao.com/post/all";
+    public static final String POST_ALL = "/post/all";
 
-    public static final String POST_MY = "https://api.mingdao.com/post/my";
+    public static final String POST_MY = "/post/my";
 
-    public static final String POST_AT_ME = "https://api.mingdao.com/post/atme";
+    public static final String POST_AT_ME = "/post/atme";
 
-    public static final String POST_REPLY_ME = "https://api.mingdao.com/post/replyme";
+    public static final String POST_REPLY_ME = "/post/replyme";
 
-    public static final String POST_FAVORITE = "https://api.mingdao.com/post/favorite";
+    public static final String POST_FAVORITE = "/post/favorite";
 
-    public static final String POST_GROUP = "https://api.mingdao.com/post/group";
+    public static final String POST_GROUP = "/post/group";
 
-    public static final String POST_USER = "https://api.mingdao.com/post/user";
+    public static final String POST_USER = "/post/user";
 
-    public static final String POST_DOC = "https://api.mingdao.com/post/doc";
+    public static final String POST_DOC = "/post/doc";
 
-    public static final String POST_IMG = "https://api.mingdao.com/post/img";
+    public static final String POST_IMG = "/post/img";
 
-    public static final String POST_FAQ = "https://api.mingdao.com/post/faq";
+    public static final String POST_FAQ = "/post/faq";
 
-    public static final String POST_UN_READ_COUNT = "https://api.mingdao.com/post/unreadcount";
+    public static final String POST_UN_READ_COUNT = "/post/unreadcount";
 
-    public static final String POST_UN_READ_AT_ME_COUNT = "https://api.mingdao.com/post/unreadatmecount";
+    public static final String POST_UN_READ_AT_ME_COUNT = "/post/unreadatmecount";
 
-    public static final String POST_UN_READ_REPLY_ME_COUNT = "https://api.mingdao.com/post/unreadreplymecount";
+    public static final String POST_UN_READ_REPLY_ME_COUNT = "/post/unreadreplymecount";
 
-    public static final String POST_DETAIL = "https://api.mingdao.com/post/detail";
+    public static final String POST_DETAIL = "/post/detail";
 
-    public static final String POST_REPLY = "https://api.mingdao.com/post/reply";
+    public static final String POST_REPLY = "/post/reply";
 
-    public static final String POST_UPDATE = "https://api.mingdao.com/post/update";
+    public static final String POST_UPDATE = "/post/update";
 
-    public static final String POST_UPLOAD = "https://api.mingdao.com/post/upload";
+    public static final String POST_UPLOAD = "/post/upload";
 
-    public static final String POST_DELETE = "https://api.mingdao.com/post/delete";
+    public static final String POST_DELETE = "/post/delete";
 
-    public static final String POST_RE_POST = "https://api.mingdao.com/post/repost";
+    public static final String POST_RE_POST = "/post/repost";
 
-    public static final String POST_ADD_REPLY = "https://api.mingdao.com/post/add_reply";
+    public static final String POST_ADD_REPLY = "/post/add_reply";
 
-    public static final String POST_DELETE_REPLY = "https://api.mingdao.com/post/delete_reply";
+    public static final String POST_DELETE_REPLY = "/post/delete_reply";
 
-    public static final String POST_ADD_FAVORITE = "https://api.mingdao.com/post/add_favorite";
+    public static final String POST_ADD_FAVORITE = "/post/add_favorite";
 
-    public static final String POST_DELETE_FAVORITE = "https://api.mingdao.com/post/delete_favorite";
+    public static final String POST_DELETE_FAVORITE = "/post/delete_favorite";
 
-    public static final String POST_ADD_LIKE = "https://api.mingdao.com/post/add_like";
+    public static final String POST_ADD_LIKE = "/post/add_like";
 
-    public static final String POST_DELETE_LIKE = "https://api.mingdao.com/post/delete_like";
+    public static final String POST_DELETE_LIKE = "/post/delete_like";
 
-    public static final String POST_LIST_TAG = "https://api.mingdao.com/post/list_tag";
+    public static final String POST_LIST_TAG = "/post/list_tag";
 
-    public static final String POST_TAG = "https://api.mingdao.com/post/tag";
+    public static final String POST_TAG = "/post/tag";
 
-    public static final String POST_ADD_TAG = "https://api.mingdao.com/post/add_tag";
+    public static final String POST_ADD_TAG = "/post/add_tag";
 
-    public static final String POST_DELETE_TAG = "https://api.mingdao.com/post/delete_tag";
+    public static final String POST_DELETE_TAG = "/post/delete_tag";
 
     /**
      * ********************APP********************
      */
-    public static final String APP_VERSION = "https://api.mingdao.com/app/version";
+    public static final String APP_VERSION = "/app/version";
 
-    public static final String APP_GET_ADMIN = "https://api.mingdao.com/app/get_admin";
+    public static final String APP_GET_ADMIN = "/app/get_admin";
 
-    public static final String APP_ADD_ADMIN = "https://api.mingdao.com/app/add_admin";
+    public static final String APP_ADD_ADMIN = "/app/add_admin";
 
-    public static final String APP_DELETE_ADMIN = "https://api.mingdao.com/app/delete_admin";
+    public static final String APP_DELETE_ADMIN = "/app/delete_admin";
 
-    public static final String APP_IS_ADMIN = "https://api.mingdao.com/app/is_admin";
+    public static final String APP_IS_ADMIN = "/app/is_admin";
 
-    public static final String APP_ADD_NOTICE = "https://api.mingdao.com/app/addAppNotice";
+    public static final String APP_ADD_NOTICE = "/app/addAppNotice";
 
-    public static final String APP_READ_NOTICE = "https://api.mingdao.com/app/readAppNotice";
+    public static final String APP_READ_NOTICE = "/app/readAppNotice";
 
 
     /**
      * ********************BILLING********************
      */
-    public static final String BILLING_CREATE = "https://api.mingdao.com/billing/create";
+    public static final String BILLING_CREATE = "/billing/create";
 
-    public static final String BILLING_CREATE_AUTO = "https://api.mingdao.com/billing/create_auto";
+    public static final String BILLING_CREATE_AUTO = "/billing/create_auto";
 
-    public static final String BILLING_DETAIL = "https://api.mingdao.com/billing/detail";
+    public static final String BILLING_DETAIL = "/billing/detail";
 
-    public static final String BILLING_CLOSE = "https://api.mingdao.com/billing/close";
+    public static final String BILLING_CLOSE = "/billing/close";
 
 
+    /**
+     * *******************OA********************
+     */
+    public static final String OA_APPLY_LIST = "/common/hrService/apply";
+
+    public static final String OA_APPLY_WIDGET_VALUE = "/common/hrService/applyWidgetValue";
+
+    public static final String OA_APPLY_WIDGET_GROUP = "/common/hrService/applyWidgetGroup";
+
+    public static final String OA_APPLY_WIDGET_GROUP_SOURCE = "/common/hrService/applyWidgetGroupSource";
     /**
      * ********************REQ********************
      */
