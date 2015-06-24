@@ -26,11 +26,11 @@ import java.util.Map;
 public class RequestOA extends CommonSupport {
 
 
-    public static List<Apply> getApplyList(String signature,  String timeStamp, String nonce,  String appkey, String appSecret,String companyId) throws Exception {
+    public static List<Apply> getApplyList(String signature,  String timestamp, String nonce,  String appkey, String appSecret,String companyId) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("companyId", companyId);
-        params.put("timeStamp", timeStamp);
+        params.put("timestamp", timestamp);
         params.put("nonce", nonce);
         params.put("appkey", appkey);
         params.put("appSecret", appSecret);
@@ -62,11 +62,11 @@ public class RequestOA extends CommonSupport {
         return applyList;
     }
 
-    public static List<ApplyWidget> getApplyWidgetGroup(String signature,  String timeStamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
+    public static List<ApplyWidget> getApplyWidgetGroup(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("applyId", applyId+"");
-        params.put("timeStamp", timeStamp);
+        params.put("timestamp", timestamp);
         params.put("nonce", nonce);
         params.put("appkey", appkey);
         params.put("appSecret", appSecret);
@@ -98,11 +98,11 @@ public class RequestOA extends CommonSupport {
         return applyWidgetList;
     }
 
-    public static List<ApplyWidget> getApplyWidgetValue(String signature,  String timeStamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
+    public static List<ApplyWidget> getApplyWidgetValue(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("applyId", applyId+"");
-        params.put("timeStamp", timeStamp);
+        params.put("timestamp", timestamp);
         params.put("nonce", nonce);
         params.put("appkey", appkey);
         params.put("appSecret", appSecret);
@@ -134,11 +134,12 @@ public class RequestOA extends CommonSupport {
         return applyWidgetList;
     }
 
-    public static List<ApplyWidgetSource> getApplyWidgetGroupSource(String signature,  String timeStamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
+    public static List<ApplyWidgetSource> getApplyWidgetGroupSource(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId,String widgetUID) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("applyId", applyId+"");
-        params.put("timeStamp", timeStamp);
+        params.put("widgetUID", widgetUID);
+        params.put("timestamp", timestamp);
         params.put("nonce", nonce);
         params.put("appkey", appkey);
         params.put("appSecret", appSecret);
