@@ -134,6 +134,43 @@ public class RequestOA extends CommonSupport {
         return applyWidgetList;
     }
 
+
+    public static List<ApplyWidget> getApplyWidgetDate(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("signature", signature);
+        params.put("applyId", applyId+"");
+        params.put("timestamp", timestamp);
+        params.put("nonce", nonce);
+        params.put("appkey", appkey);
+        params.put("appSecret", appSecret);
+        List<ApplyWidget> applyWidgetList=null;
+        ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_WIDGET_VALUE, RequestType.POST);
+        if (responseObject != null) {
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if (rootObject != null) {
+                        if (rootObject.getString("result").equals("0")) {
+                            JSONArray widgetArray=rootObject.getJSONArray("widgetList");
+                            if(widgetArray!=null&&!widgetArray.isEmpty()){
+                                applyWidgetList=new ArrayList<ApplyWidget>();
+                                for(Object obj:widgetArray){
+                                    JSONObject applyObj=(JSONObject)obj;
+                                    ApplyWidget applyWidget=new ApplyWidget();
+                                    applyWidget.setUid(applyObj.getString("uid"));
+                                    applyWidget.setName(applyObj.getString("name"));
+                                    applyWidgetList.add(applyWidget);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return applyWidgetList;
+    }
+
     public static List<ApplyWidgetSource> getApplyWidgetGroupSource(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId,String widgetUID) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
@@ -152,10 +189,10 @@ public class RequestOA extends CommonSupport {
                     JSONObject rootObject = JSONObject.fromObject(result);
                     if (rootObject != null) {
                         if (rootObject.getString("result").equals("0")) {
-                            JSONArray widgetArray=rootObject.getJSONArray("widgetList");
-                            if(widgetArray!=null&&!widgetArray.isEmpty()){
+                            JSONArray sourceArray=rootObject.getJSONArray("sourceList");
+                            if(sourceArray!=null&&!sourceArray.isEmpty()){
                                 applyWidgetSourceList=new ArrayList<ApplyWidgetSource>();
-                                for(Object obj:widgetArray){
+                                for(Object obj:sourceArray){
                                     JSONObject applyObj=(JSONObject)obj;
                                     ApplyWidgetSource applyWidgetSource=new ApplyWidgetSource();
                                     applyWidgetSource.setKey(applyObj.getString("key"));
