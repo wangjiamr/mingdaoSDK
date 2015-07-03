@@ -1,10 +1,7 @@
 package com.mingdao.api.oa;
 
 import com.mingdao.api.common.CommonSupport;
-import com.mingdao.api.entity.Apply;
-import com.mingdao.api.entity.ApplyWidget;
-import com.mingdao.api.entity.ApplyWidgetSource;
-import com.mingdao.api.entity.ResponseObject;
+import com.mingdao.api.entity.*;
 import com.mingdao.api.resources.URI;
 import com.mingdao.api.utils.RequestType;
 import net.sf.json.JSONArray;
@@ -144,7 +141,7 @@ public class RequestOA extends CommonSupport {
         params.put("appkey", appkey);
         params.put("appSecret", appSecret);
         List<ApplyWidget> applyWidgetList=null;
-        ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_WIDGET_VALUE, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_WIDGET_DATE, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -207,4 +204,58 @@ public class RequestOA extends CommonSupport {
         return applyWidgetSourceList;
     }
 
+    public static List<ApplyData> getApplyData(String signature,  String timestamp, String nonce,  String appkey, String appSecret,
+                                               String companyId,Long applyId,String userId,String widgetUIDs,
+                                               String startDate,String endDate) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("signature", signature);
+        params.put("timestamp", timestamp);
+        params.put("nonce", nonce);
+        params.put("appkey", appkey);
+        params.put("appSecret", appSecret);
+        params.put("companyId", companyId);
+        params.put("applyId", applyId+"");
+        params.put("userId", userId);
+        params.put("widgetUIDs", widgetUIDs);
+        params.put("startDate", startDate);
+        params.put("endDate", endDate);
+        List<ApplyData> applyDataList=null;
+        ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_DATA, RequestType.POST);
+        if (responseObject != null) {
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if (rootObject != null) {
+                        if (rootObject.getString("result").equals("0")) {
+                            JSONArray reqArray=rootObject.getJSONArray("reqArray");
+                            if(reqArray!=null&&!reqArray.isEmpty()){
+                                applyDataList=new ArrayList<ApplyData>();
+                                for(Object obj:reqArray){
+                                    JSONObject applyObj=(JSONObject)obj;
+                                    ApplyData applyData=new ApplyData();
+                                    applyData.setId(applyObj.getLong("reqId"));
+                                    applyData.setSendDate(applyObj.getString("sendDate"));
+                                    if(applyObj.containsKey("dataArray")){
+                                        JSONArray dataArray=applyObj.getJSONArray("dataArray");
+                                        if(dataArray!=null&&!dataArray.isEmpty()){
+                                            Map<String,String> valueMap=new HashMap<String, String>();
+                                            for(Object data:dataArray){
+                                                JSONObject widgetDateObj=(JSONObject)data;
+                                                valueMap.put("uid",widgetDateObj.getString("uid"));
+                                                valueMap.put("value",widgetDateObj.getString("value"));
+                                            }
+                                            applyData.setValueMap(valueMap);
+                                        }
+                                    }
+                                    applyDataList.add(applyData);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return applyDataList;
+    }
 }

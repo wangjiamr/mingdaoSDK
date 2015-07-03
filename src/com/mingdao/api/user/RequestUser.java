@@ -36,7 +36,7 @@ public class RequestUser extends CommonSupport {
                     params.put("nonce", nonce);
                     params.put("app_key", appkey);
                     params.put("pid", companyId);
-                    ResponseObject responseObject = requestAPI(params, URI.USER_ALL_FOR_INSTALL, RequestType.POST);
+                    ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.USER_ALL_FOR_INSTALL, RequestType.POST);
                     if (responseObject != null) {
                         if (!responseObject.isError()) {
                             String result = responseObject.getResult();
@@ -660,5 +660,64 @@ public class RequestUser extends CommonSupport {
             }
         }
         return userList;
+    }
+
+
+    public static int edit(String timeStamp, String nonce, String appkey, String appSecret,String companyId,User user) throws Exception {
+        String signature=null;
+        int count = -1;
+        if(StringUtils.isNotBlank(timeStamp)&&StringUtils.isNotBlank(nonce)&&StringUtils.isNotBlank(appkey)&&StringUtils.isNotBlank(appSecret)) {
+            if (StringUtils.isNotBlank(companyId)&&user!=null) {
+                signature = SignatureUtil.getSignature(timeStamp, nonce, "", appkey, appSecret);
+                if (StringUtils.isNotBlank(signature)) {
+                    Map<String, String> params = new HashMap<String, String>();
+                    params.put("format", "json");
+                    params.put("signature", signature);
+                    params.put("timestamp", timeStamp);
+                    params.put("nonce", nonce);
+                    params.put("app_key", appkey);
+                    params.put("pID", companyId);
+                    params.put("uID", companyId);
+                    if(StringUtils.isNotBlank(user.getName())){
+                        params.put("name", user.getName());
+                    }
+                    if(StringUtils.isNotBlank(user.getDepartment())){
+                        params.put("dep", user.getDepartment());
+                    }
+                    if(StringUtils.isNotBlank(user.getJob())){
+                        params.put("job", user.getJob());
+                    }
+                    if(StringUtils.isNotBlank(user.getName())){
+                        params.put("name", user.getName());
+                    }
+                    if(StringUtils.isNotBlank(user.getMobilePhone())){
+                        params.put("mobile_phone", user.getMobilePhone());
+                    }
+                    if(StringUtils.isNotBlank(user.getWork_phone())){
+                        params.put("work_phone", user.getWork_phone());
+                    }
+                    if(StringUtils.isNotBlank(user.getBirth())){
+                        params.put("birth", user.getBirth());
+                    }
+                    if(StringUtils.isNotBlank(user.getGender())){
+                        params.put("gender", user.getGender());
+                    }
+                    ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.USER_EDIT, RequestType.POST);
+                    if (responseObject != null) {
+                        if (!responseObject.isError()) {
+                            String result = responseObject.getResult();
+                            if (StringUtils.isNotBlank(result)) {
+                                JSONObject rootObject = JSONObject.fromObject(result);
+                                if (rootObject != null) {
+                                    count = rootObject.getInt("count");
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        return count;
     }
 }

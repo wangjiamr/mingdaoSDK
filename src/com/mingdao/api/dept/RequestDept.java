@@ -41,7 +41,7 @@ public class RequestDept extends CommonSupport {
                     params.put("app_key", appkey);
                     params.put("pid", companyId);
                     params.put("pageSize", "10000");
-                    ResponseObject responseObject = requestAPI(params, URI.DEPT_ALL_FOR_INSTALL, RequestType.POST);
+                    ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.DEPT_ALL_FOR_INSTALL, RequestType.POST);
                     if (responseObject != null) {
                         if (!responseObject.isError()) {
                             String result = responseObject.getResult();
@@ -76,7 +76,7 @@ public class RequestDept extends CommonSupport {
         params.put("access_token", accessToken);
         params.put("pageSize", "10000");
         List<Department> departmentList = null;
-        ResponseObject responseObject = requestAPI(params, URI.DEPT_ALL, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.DEPT_ALL, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -111,7 +111,7 @@ public class RequestDept extends CommonSupport {
         params.put("departmentName", departmentName);
         int count = -1;
         Department department=null;
-        ResponseObject responseObject = requestAPI(params, URI.DEPT_ADD, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.DEPT_ADD, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
@@ -134,14 +134,13 @@ public class RequestDept extends CommonSupport {
         return department;
     }
 
-    public static int editDepartment(String accessToken, Long departmentID,String departmentName) throws Exception {
+    public static int deleteDepartment(String accessToken, Long departmentID) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("format", "json");
         params.put("access_token", accessToken);
-        params.put("departmentID", departmentID+"");
-        params.put("departmentName", departmentName);
+        params.put("departmentsIDs", departmentID+"");
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.DEPT_EDIT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.DEPT_DEL, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

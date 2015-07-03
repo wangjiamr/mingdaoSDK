@@ -25,7 +25,9 @@ public class URI {
     /**
      * ********************USER********************
      */
-    public static final String USER_ALL_FOR_INSTALL = "https://api2.mingdao.com/mdprivate/user/getall.aspx";
+    public static final String USER_ALL_FOR_INSTALL = "/mdprivate/user/getall.aspx";
+
+    public static final String USER_EDIT = "/mdprivate/user/edit.aspx";
 
 
 
@@ -160,13 +162,18 @@ public class URI {
 
 
 
-    public static final String DEPT_ALL = "https://api2.mingdao.com/mdprivate/group/getDepartments.aspx";
+    public static final String DEPT_ALL = "https://api.mingdao.com/mdprivate/group/getDepartments";
 
-    public static final String DEPT_ALL_FOR_INSTALL = "https://api2.mingdao.com/mdprivate/group/getALLDep.aspx";
+    public static final String DEPT_ALL_FOR_INSTALL = "https://api.mingdao.com/mdprivate/group/getALLDep.aspx";
 
-    public static final String DEPT_ADD = "https://api2.mingdao.com/mdprivate/group/addDepartment.aspx";
+    public static final String DEPT_ADD = "https://api.mingdao.com/mdprivate/group/addDepartment";
 
-    public static final String DEPT_EDIT="https://api2.mingdao.com/mdprivate/group/editDepartment.aspx";
+    public static final String DEPT_EDIT="https://api.mingdao.com/mdprivate/group/editDepartment";
+
+    public static final String DEPT_DEL="https://api.mingdao.com/mdprivate/group/delDepartments";
+
+
+
 
     /**
      * ********************TASK********************
@@ -327,11 +334,15 @@ public class URI {
      */
     public static final String OA_APPLY_LIST = "/common/hrService/apply";
 
+    public static final String OA_APPLY_WIDGET_DATE = "/common/hrService/applyWidgetDate";
+
     public static final String OA_APPLY_WIDGET_VALUE = "/common/hrService/applyWidgetValue";
 
     public static final String OA_APPLY_WIDGET_GROUP = "/common/hrService/applyWidgetGroup";
 
     public static final String OA_APPLY_WIDGET_GROUP_SOURCE = "/common/hrService/applyWidgetGroupSource";
+
+    public static final String OA_APPLY_DATA = "/common/hrService/applyData";
     /**
      * ********************REQ********************
      */
