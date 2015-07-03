@@ -134,6 +134,30 @@ public class RequestDept extends CommonSupport {
         return department;
     }
 
+
+
+    public static int editDepartment(String accessToken, Long departmentID,String departmentName) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("format", "json");
+        params.put("access_token", accessToken);
+        params.put("departmentID", departmentID+"");
+        params.put("departmentName", departmentName);
+        int count = -1;
+        ResponseObject responseObject = requestAPI(params, URI.DEPT_EDIT, RequestType.GET);
+        if (responseObject != null) {
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if (rootObject != null) {
+                        count = rootObject.getInt("count");
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
     public static int deleteDepartment(String accessToken, Long departmentID) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("format", "json");
