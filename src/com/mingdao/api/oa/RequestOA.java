@@ -242,8 +242,7 @@ public class RequestOA extends CommonSupport {
                                             Map<String,String> valueMap=new HashMap<String, String>();
                                             for(Object data:dataArray){
                                                 JSONObject widgetDateObj=(JSONObject)data;
-                                                valueMap.put("uid",widgetDateObj.getString("uid"));
-                                                valueMap.put("value",widgetDateObj.getString("value"));
+                                                valueMap.put(widgetDateObj.getString("uid"),widgetDateObj.getString("value"));
                                             }
                                             applyData.setValueMap(valueMap);
                                         }
