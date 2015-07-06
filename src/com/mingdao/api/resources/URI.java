@@ -162,15 +162,15 @@ public class URI {
 
 
 
-    public static final String DEPT_ALL = "https://api.mingdao.com/mdprivate/group/getDepartments";
+    public static final String DEPT_ALL = "/mdprivate/group/getDepartments";
 
-    public static final String DEPT_ALL_FOR_INSTALL = "https://api.mingdao.com/mdprivate/group/getALLDep.aspx";
+    public static final String DEPT_ALL_FOR_INSTALL = "/mdprivate/group/getALLDep.aspx";
 
-    public static final String DEPT_ADD = "https://api.mingdao.com/mdprivate/group/addDepartment";
+    public static final String DEPT_ADD = "/mdprivate/group/addDepartment";
 
-    public static final String DEPT_EDIT="https://api.mingdao.com/mdprivate/group/editDepartment";
+    public static final String DEPT_EDIT="/mdprivate/group/editDepartment";
 
-    public static final String DEPT_DEL="https://api.mingdao.com/mdprivate/group/delDepartments";
+    public static final String DEPT_DEL="/mdprivate/group/delDepartments";
 
 
 
