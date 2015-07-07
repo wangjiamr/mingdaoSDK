@@ -143,7 +143,7 @@ public class RequestDept extends CommonSupport {
         params.put("departmentID", departmentID+"");
         params.put("departmentName", departmentName);
         int count = -1;
-        ResponseObject responseObject = requestAPI(params, URI.DEPT_EDIT, RequestType.GET);
+        ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.DEPT_EDIT, RequestType.GET);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
