@@ -677,7 +677,7 @@ public class RequestUser extends CommonSupport {
                     params.put("nonce", nonce);
                     params.put("app_key", appkey);
                     params.put("pID", companyId);
-                    params.put("uID", companyId);
+                    params.put("uID", user.getId());
                     if(StringUtils.isNotBlank(user.getName())){
                         params.put("name", user.getName());
                     }
