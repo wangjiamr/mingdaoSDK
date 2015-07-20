@@ -16,9 +16,13 @@ public class ApplyData implements Serializable {
 
     private Long id;
 
+    private String reqNo;
+
     private String sendDate;
 
     private Map<String,String> valueMap;
+
+    private Map<String,String> labelMap;
 
     public Long getId() {
         return id;
@@ -42,5 +46,21 @@ public class ApplyData implements Serializable {
 
     public void setValueMap(Map<String, String> valueMap) {
         this.valueMap = valueMap;
+    }
+
+    public Map<String, String> getLabelMap() {
+        return labelMap;
+    }
+
+    public void setLabelMap(Map<String, String> labelMap) {
+        this.labelMap = labelMap;
+    }
+
+    public String getReqNo() {
+        return reqNo;
+    }
+
+    public void setReqNo(String reqNo) {
+        this.reqNo = reqNo;
     }
 }

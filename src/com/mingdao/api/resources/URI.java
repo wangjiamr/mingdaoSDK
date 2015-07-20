@@ -164,7 +164,7 @@ public class URI {
 
     public static final String DEPT_ALL = "/mdprivate/group/getDepartments";
 
-    public static final String DEPT_ALL_FOR_INSTALL = "/mdprivate/group/getALLDep.aspx";
+    public static final String DEPT_ALL_FOR_INSTALL = "https://api2.mingdao.com/mdprivate/group/getALLDep.aspx";
 
     public static final String DEPT_ADD = "/mdprivate/group/addDepartment";
 
@@ -332,7 +332,9 @@ public class URI {
     /**
      * *******************OA********************
      */
-    public static final String OA_APPLY_LIST = "/common/hrService/apply";
+    public static final String OA_APPLY_LIST = "/common/hrService/applyList";
+
+    public static final String OA_APPLY = "/common/hrService/apply";
 
     public static final String OA_APPLY_WIDGET_DATE = "/common/hrService/applyWidgetDate";
 

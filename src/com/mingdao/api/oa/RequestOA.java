@@ -22,6 +22,36 @@ import java.util.Map;
  */
 public class RequestOA extends CommonSupport {
 
+    public static Apply getApply(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("signature", signature);
+        params.put("applyId", applyId+"");
+        params.put("timestamp", timestamp);
+        params.put("nonce", nonce);
+        params.put("appkey", appkey);
+        params.put("appSecret", appSecret);
+        Apply apply=null;
+        ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY, RequestType.POST);
+        if (responseObject != null) {
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if (rootObject != null) {
+                        if (rootObject.getString("result").equals("0")) {
+                             apply=new Apply();
+                            apply.setId(rootObject.getLong("id"));
+                            apply.setName(rootObject.getString("name"));
+
+                        }
+                    }
+                }
+            }
+        }
+        return apply;
+    }
+
+
 
     public static List<Apply> getApplyList(String signature,  String timestamp, String nonce,  String appkey, String appSecret,String companyId) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
@@ -235,16 +265,22 @@ public class RequestOA extends CommonSupport {
                                     JSONObject applyObj=(JSONObject)obj;
                                     ApplyData applyData=new ApplyData();
                                     applyData.setId(applyObj.getLong("reqId"));
+                                    applyData.setReqNo(applyObj.getString("reqNo"));
                                     applyData.setSendDate(applyObj.getString("sendDate"));
                                     if(applyObj.containsKey("dataArray")){
                                         JSONArray dataArray=applyObj.getJSONArray("dataArray");
                                         if(dataArray!=null&&!dataArray.isEmpty()){
                                             Map<String,String> valueMap=new HashMap<String, String>();
+                                            Map<String,String> labelMap=new HashMap<String, String>();
                                             for(Object data:dataArray){
                                                 JSONObject widgetDateObj=(JSONObject)data;
-                                                valueMap.put(widgetDateObj.getString("uid"),widgetDateObj.getString("value"));
+                                                if(widgetDateObj!=null){
+                                                    valueMap.put(widgetDateObj.getString("uid"),widgetDateObj.getString("value"));
+                                                    labelMap.put(widgetDateObj.getString("uid"),widgetDateObj.getString("label"));
+                                                }
                                             }
                                             applyData.setValueMap(valueMap);
+                                            applyData.setLabelMap(labelMap);
                                         }
                                     }
                                     applyDataList.add(applyData);

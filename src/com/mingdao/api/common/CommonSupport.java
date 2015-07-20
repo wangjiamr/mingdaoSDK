@@ -8,6 +8,7 @@ import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -44,6 +45,13 @@ public class CommonSupport {
             }
             responseObject = HttpsUtil.httpByGet2RObjSSL(URI, null, null);
         } else if (requestType == RequestType.POST) {
+            System.out.println(URI+"请求参数是");
+            if(params!=null&&!params.isEmpty()){
+                Set<String> keys=params.keySet();
+                for(String k:keys){
+                    System.out.println(k+"="+params.get(k));
+                }
+            }
             responseObject = HttpURLConnectionUtil.sendSSLPostRequest(URI, params);
         } else if (requestType == RequestType.POST_XML) {
             responseObject = HttpsUtil.httpByPostXMLObjSSL(URI, params, null, null);

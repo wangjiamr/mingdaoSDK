@@ -665,7 +665,7 @@ public class RequestUser extends CommonSupport {
 
     public static int edit(String timeStamp, String nonce, String appkey, String appSecret,String companyId,User user) throws Exception {
         String signature=null;
-        int count = -1;
+        int status = -1;
         if(StringUtils.isNotBlank(timeStamp)&&StringUtils.isNotBlank(nonce)&&StringUtils.isNotBlank(appkey)&&StringUtils.isNotBlank(appSecret)) {
             if (StringUtils.isNotBlank(companyId)&&user!=null) {
                 signature = SignatureUtil.getSignature(timeStamp, nonce, "", appkey, appSecret);
@@ -709,7 +709,7 @@ public class RequestUser extends CommonSupport {
                             if (StringUtils.isNotBlank(result)) {
                                 JSONObject rootObject = JSONObject.fromObject(result);
                                 if (rootObject != null) {
-                                    count = rootObject.getInt("count");
+                                    status = rootObject.getInt("status");
                                 }
                             }
                         }
@@ -718,6 +718,6 @@ public class RequestUser extends CommonSupport {
                 }
             }
         }
-        return count;
+        return status;
     }
 }

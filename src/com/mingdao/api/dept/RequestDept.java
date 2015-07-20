@@ -41,7 +41,7 @@ public class RequestDept extends CommonSupport {
                     params.put("app_key", appkey);
                     params.put("pid", companyId);
                     params.put("pageSize", "10000");
-                    ResponseObject responseObject = requestAPI(params, getMingdaoUrl()+URI.DEPT_ALL_FOR_INSTALL, RequestType.POST);
+                    ResponseObject responseObject = requestAPI(params, URI.DEPT_ALL_FOR_INSTALL, RequestType.POST);
                     if (responseObject != null) {
                         if (!responseObject.isError()) {
                             String result = responseObject.getResult();
