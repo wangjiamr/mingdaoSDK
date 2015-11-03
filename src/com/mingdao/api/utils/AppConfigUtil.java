@@ -53,6 +53,7 @@ public class AppConfigUtil {
             appConfig.setMingdaoUri(propertiesConfig.getString("mingdao_uri"));
             appConfig.setOaUri(propertiesConfig.getString("oa_uri"));
             appConfig.setHrUri(propertiesConfig.getString("hr_uri"));
+            appConfig.setOaSearchUri(propertiesConfig.getString("oa_search_uri"));
         }
     }
 }

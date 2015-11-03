@@ -32,27 +32,9 @@ public class CommonSupport {
     public static ResponseObject requestAPI(Map<String, String> params, String URI, RequestType requestType) throws Exception {
         ResponseObject responseObject = null;
         if (requestType == RequestType.GET) {
-            StringBuilder sb = new StringBuilder();
-            if (params != null && !params.isEmpty()) {
-                for (String key : params.keySet()) {
-                    if (sb.length() > 0) {
-                        sb.append("&");
-                    }
-                    sb.append(key + "=" + params.get(key));
-                }
-                URI += "?" + sb.toString();
-                sb = null;
-            }
-            responseObject = HttpsUtil.httpByGet2RObjSSL(URI, null, null);
+            responseObject = OKHttpUtil.get(URI, params);
         } else if (requestType == RequestType.POST) {
-            System.out.println(URI+"请求参数是");
-            if(params!=null&&!params.isEmpty()){
-                Set<String> keys=params.keySet();
-                for(String k:keys){
-                    System.out.println(k+"="+params.get(k));
-                }
-            }
-            responseObject = HttpURLConnectionUtil.sendSSLPostRequest(URI, params);
+            responseObject = OKHttpUtil.post(URI, params);
         } else if (requestType == RequestType.POST_XML) {
             responseObject = HttpsUtil.httpByPostXMLObjSSL(URI, params, null, null);
         } else if (requestType == RequestType.POST_JSON) {

@@ -345,6 +345,12 @@ public class URI {
     public static final String OA_APPLY_WIDGET_GROUP_SOURCE = "/common/hrService/applyWidgetGroupSource";
 
     public static final String OA_APPLY_DATA = "/common/hrService/applyData";
+
+    /**
+     * *******************OA_SEARCH********************
+     */
+    public static final String OA_SEARCH = "/search/full";
+
     /**
      * ********************REQ********************
      */

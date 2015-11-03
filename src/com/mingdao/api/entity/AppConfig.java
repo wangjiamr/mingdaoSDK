@@ -23,6 +23,8 @@ public class AppConfig implements Serializable {
 
     private String oaUri;
 
+    private String oaSearchUri;
+
     private String hrUri;
 
     public String getAppKey() {
@@ -79,5 +81,13 @@ public class AppConfig implements Serializable {
 
     public void setHrUri(String hrUri) {
         this.hrUri = hrUri;
+    }
+
+    public String getOaSearchUri() {
+        return oaSearchUri;
+    }
+
+    public void setOaSearchUri(String oaSearchUri) {
+        this.oaSearchUri = oaSearchUri;
     }
 }
