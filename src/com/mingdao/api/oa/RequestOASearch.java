@@ -22,7 +22,7 @@ import java.util.Map;
  */
 public class RequestOASearch extends CommonSupport {
 
-    public static JSONObject searchFull(String signature, String timestamp, String nonce, String appkey, String appSecret, Long companyId, String userId, String keyword) throws Exception {
+    public static JSONObject searchFull(String signature, String timestamp, String nonce, String appkey, String appSecret, Long companyId, String userId, String keyword,String requestPlatform) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("timestamp", timestamp);
@@ -32,8 +32,9 @@ public class RequestOASearch extends CommonSupport {
         params.put("companyId", companyId + "");
         params.put("userId", userId);
         params.put("keyword", keyword);
+        params.put("requestPlatform", requestPlatform);
         JSONObject searchObj = null;
-        ResponseObject responseObject = requestAPI(params, getOaUrl() + URI.OA_SEARCH, RequestType.POST);
+        ResponseObject responseObject = requestAPI(params, getOaSearchUrl() + URI.OA_SEARCH, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();

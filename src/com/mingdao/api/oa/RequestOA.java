@@ -22,14 +22,12 @@ import java.util.Map;
  */
 public class RequestOA extends CommonSupport {
 
-    public static Apply getApply(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
+    public static Apply getApply(String signature,  String timestamp, String nonce,  Long applyId) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("applyId", applyId+"");
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
-        params.put("appkey", appkey);
-        params.put("appSecret", appSecret);
         Apply apply=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY, RequestType.POST);
         if (responseObject != null) {
@@ -53,14 +51,12 @@ public class RequestOA extends CommonSupport {
 
 
 
-    public static List<Apply> getApplyList(String signature,  String timestamp, String nonce,  String appkey, String appSecret,String companyId) throws Exception {
+    public static List<Apply> getApplyList(String signature,  String timestamp, String nonce, String companyId) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("companyId", companyId);
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
-        params.put("appkey", appkey);
-        params.put("appSecret", appSecret);
         List<Apply> applyList=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_LIST, RequestType.POST);
         if (responseObject != null) {
@@ -89,14 +85,12 @@ public class RequestOA extends CommonSupport {
         return applyList;
     }
 
-    public static List<ApplyWidget> getApplyWidgetGroup(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
+    public static List<ApplyWidget> getApplyWidgetGroup(String signature,  String timestamp, String nonce,  Long applyId) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("applyId", applyId+"");
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
-        params.put("appkey", appkey);
-        params.put("appSecret", appSecret);
         List<ApplyWidget> applyWidgetList=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_WIDGET_GROUP, RequestType.POST);
         if (responseObject != null) {
@@ -125,14 +119,12 @@ public class RequestOA extends CommonSupport {
         return applyWidgetList;
     }
 
-    public static List<ApplyWidget> getApplyWidgetValue(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
+    public static List<ApplyWidget> getApplyWidgetValue(String signature,  String timestamp, String nonce,  Long applyId) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("applyId", applyId+"");
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
-        params.put("appkey", appkey);
-        params.put("appSecret", appSecret);
         List<ApplyWidget> applyWidgetList=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_WIDGET_VALUE, RequestType.POST);
         if (responseObject != null) {
@@ -162,14 +154,12 @@ public class RequestOA extends CommonSupport {
     }
 
 
-    public static List<ApplyWidget> getApplyWidgetDate(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId) throws Exception {
+    public static List<ApplyWidget> getApplyWidgetDate(String signature,  String timestamp, String nonce,  Long applyId) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("applyId", applyId+"");
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
-        params.put("appkey", appkey);
-        params.put("appSecret", appSecret);
         List<ApplyWidget> applyWidgetList=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_WIDGET_DATE, RequestType.POST);
         if (responseObject != null) {
@@ -198,15 +188,13 @@ public class RequestOA extends CommonSupport {
         return applyWidgetList;
     }
 
-    public static List<ApplyWidgetSource> getApplyWidgetGroupSource(String signature,  String timestamp, String nonce,  String appkey, String appSecret,Long applyId,String widgetUID) throws Exception {
+    public static List<ApplyWidgetSource> getApplyWidgetGroupSource(String signature,  String timestamp, String nonce,  Long applyId,String widgetUID) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("applyId", applyId+"");
         params.put("widgetUID", widgetUID);
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
-        params.put("appkey", appkey);
-        params.put("appSecret", appSecret);
         List<ApplyWidgetSource> applyWidgetSourceList=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_WIDGET_GROUP_SOURCE, RequestType.POST);
         if (responseObject != null) {
@@ -234,15 +222,13 @@ public class RequestOA extends CommonSupport {
         return applyWidgetSourceList;
     }
 
-    public static List<ApplyData> getApplyData(String signature,  String timestamp, String nonce,  String appkey, String appSecret,
+    public static List<ApplyData> getApplyData(String signature,  String timestamp, String nonce,
                                                String companyId,Long applyId,String userId,String widgetUIDs,
                                                String startDate,String endDate) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
-        params.put("appkey", appkey);
-        params.put("appSecret", appSecret);
         params.put("companyId", companyId);
         params.put("applyId", applyId+"");
         params.put("userId", userId);

@@ -19,16 +19,23 @@ import java.util.Set;
  */
 public class CommonSupport {
     protected static AppConfig appConfig = AppConfigUtil.create();
-    
-    protected static String getOaUrl(){
+
+    protected static String getOaSearchUrl() {
+        return appConfig.getOaSearchUri();
+    }
+
+    protected static String getOaUrl() {
         return appConfig.getOaUri();
     }
-    protected static String getMingdaoUrl(){
+
+    protected static String getMingdaoUrl() {
         return appConfig.getMingdaoUri();
     }
-    protected static String getHrUrl(){
+
+    protected static String getHrUrl() {
         return appConfig.getHrUri();
     }
+
     public static ResponseObject requestAPI(Map<String, String> params, String URI, RequestType requestType) throws Exception {
         ResponseObject responseObject = null;
         if (requestType == RequestType.GET) {
@@ -84,13 +91,13 @@ public class CommonSupport {
                                     }
                                     System.out.println("request:method[" + requestType.toString() + "]" + URI + "  错误代码:" + responseObject.getErrorCode());
                                 }
-                            }else if(rootObject.has("retcode")){
+                            } else if (rootObject.has("retcode")) {
                                 error_code = rootObject.getString("retcode");
                                 if (StringUtils.isNotBlank(error_code)) {
-                                    if(error_code.equals("0000")){
-                                        error_code=null;
-                                    }else{
-                                        System.out.println("request:method[" + requestType.toString() + "]" + URI + "  错误代码:" + error_code+" "+rootObject.getString("retmsg"));
+                                    if (error_code.equals("0000")) {
+                                        error_code = null;
+                                    } else {
+                                        System.out.println("request:method[" + requestType.toString() + "]" + URI + "  错误代码:" + error_code + " " + rootObject.getString("retmsg"));
                                     }
                                 }
                             }
@@ -102,7 +109,7 @@ public class CommonSupport {
                         }
                     }
                 }
-            }else{
+            } else {
                 System.out.println("request:method[" + requestType.toString() + "]" + URI + "  STATUS_CODE:" + responseObject.getStatusCode());
             }
         }
