@@ -10,6 +10,7 @@ import com.mingdao.api.utils.RequestType;
 import com.mingdao.api.utils.SignatureUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.*;
@@ -686,6 +687,8 @@ public class RequestUser extends CommonSupport {
                     }
                     if(StringUtils.isNotBlank(user.getJob())){
                         params.put("job", user.getJob());
+                    }else{
+                        params.put("job", "");
                     }
                     if(StringUtils.isNotBlank(user.getName())){
                         params.put("name", user.getName());
