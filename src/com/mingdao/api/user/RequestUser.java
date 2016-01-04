@@ -157,6 +157,7 @@ public class RequestUser extends CommonSupport {
         return userList;
     }
 
+
     public static List<User> getUserSearch(String accessToken, String keywords, String g_id, String dep) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("format", "json");
