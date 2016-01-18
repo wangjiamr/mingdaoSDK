@@ -21,6 +21,11 @@ public class URI {
 
     public static final String OAUTH2_EMAIL = "/oauth2/verify_email";
 
+    public static final String OAUTH2_GET_WX_TOKEN = "/oauth2/get_wx_token.aspx";
+
+    public static final String OAUTH2_BIND_WX_TOKEN = "/oauth2/bind_wx_token.aspx";
+
+
 
     /**
      * ********************USER********************
@@ -60,6 +65,8 @@ public class URI {
     public static final String USER_GET_MANAGER_USER_TREE = "/user/get_managerUserTree";
 
     public static final String USER_GET_USER_METIONED = "/user/get_userMetioned";
+
+    public static final String USER_GET_SUBORDINATE_USERS = "/user/get_subordinateUsers";
 
 
 

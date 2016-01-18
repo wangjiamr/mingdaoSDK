@@ -168,4 +168,48 @@ public class RequestOauth2 extends CommonSupport {
         }
         return oAuth2Object;
     }
+
+    public static OAuth2Object getWxToken(String unionId,String openId,
+                                          String nickName,String sex,String headImgUrl) throws Exception {
+        AppConfig appConfig = AppConfigUtil.create();
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("app_key", appConfig.getAppKey());
+        params.put("app_secret", appConfig.getAppSecret());
+        params.put("unionId", unionId);
+        params.put("openId", openId);
+        params.put("nickName", nickName);
+        params.put("sex", sex);
+        params.put("headImgUrl", headImgUrl);
+        OAuth2Object oAuth2Object = null;
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.OAUTH2_GET_WX_TOKEN, RequestType.POST);
+        if (responseObject != null) {
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    System.out.println(result);
+                }
+            }
+        }
+        return oAuth2Object;
+    }
+
+    public static OAuth2Object bindWxToken(String username,String password,
+                                          String unionId,String state) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("username", username);
+        params.put("password", password);
+        params.put("unionId", unionId);
+        params.put("state", state);
+        OAuth2Object oAuth2Object = null;
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.OAUTH2_BIND_WX_TOKEN, RequestType.POST);
+        if (responseObject != null) {
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    System.out.println(result);
+                }
+            }
+        }
+        return oAuth2Object;
+    }
 }

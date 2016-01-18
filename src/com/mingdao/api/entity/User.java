@@ -14,6 +14,9 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class User implements Serializable {
+
+    private String accountid;
+
     private String avstar;
 
     private String avstar100;
@@ -304,5 +307,13 @@ public class User implements Serializable {
 
     public void setUnitName(String unitName) {
         this.unitName = unitName;
+    }
+
+    public String getAccountid() {
+        return accountid;
+    }
+
+    public void setAccountid(String accountid) {
+        this.accountid = accountid;
     }
 }

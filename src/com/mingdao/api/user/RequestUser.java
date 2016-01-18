@@ -51,6 +51,7 @@ public class RequestUser extends CommonSupport {
                                             JSONObject obj = userArray.getJSONObject(i);
                                             if (obj != null) {
                                                 User user = new User();
+                                                user.setAccountid(obj.getString("accountid"));
                                                 user.setAvstar(obj.getString("avstar"));
                                                 user.setAvstar100(obj.getString("avstar100"));
                                                 user.setDepartment(obj.getString("department"));
@@ -94,6 +95,7 @@ public class RequestUser extends CommonSupport {
                                 JSONObject obj = userArray.getJSONObject(i);
                                 if (obj != null) {
                                     User user = new User();
+                                    user.setAccountid(obj.getString("accountid"));
                                     user.setAvstar(obj.getString("avstar"));
                                     user.setAvstar100(obj.getString("avstar100"));
                                     user.setDepartment(obj.getString("department"));
@@ -253,6 +255,48 @@ public class RequestUser extends CommonSupport {
         return userList;
     }
 
+    public static List<User> getSubordinateUserList(String accessToken,String userId) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("format", "json");
+        params.put("access_token", accessToken);
+        params.put("u_id", userId);
+        List<User> userList = null;
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_GET_SUBORDINATE_USERS, RequestType.GET);
+        if (responseObject != null) {
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if (rootObject != null) {
+                        JSONArray userArray = rootObject.getJSONArray("users");
+                        if (userArray != null && !userArray.isEmpty()) {
+                            userList = new ArrayList<User>();
+                            for (int i = 0; i < userArray.size(); i++) {
+                                JSONObject obj = userArray.getJSONObject(i);
+                                if (obj != null) {
+                                    User user = new User();
+                                    user.setAvstar(obj.getString("avstar"));
+                                    user.setAvstar100(obj.getString("avstar100"));
+                                    user.setDepartment(obj.getString("department"));
+                                    user.setEmail(obj.getString("email"));
+                                    user.setId(obj.getString("id"));
+                                    user.setJob(obj.getString("job"));
+                                    user.setMobilePhone(obj.getString("mobilephone"));
+                                    user.setWork_site(obj.getString("work_site"));
+                                    user.setJob_number(obj.getString("job_number"));
+                                    user.setName(obj.getString("name"));
+                                    user.setStatus(obj.getInt("status"));
+                                    userList.add(user);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return userList;
+    }
+
     public static Map<String, User> getMapUserList(String accessToken, Set<String> userIdSet) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("format", "json");
@@ -319,6 +363,7 @@ public class RequestUser extends CommonSupport {
                         if (userObject != null) {
                             user = new User();
                             user.setId(userObject.getString("id"));
+                            user.setAccountid(userObject.getString("accountid"));
                             user.setName(userObject.getString("name"));
                             user.setAvstar(userObject.getString("avstar"));
                             user.setAvstar100(userObject.getString("avstar100"));
