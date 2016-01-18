@@ -58,6 +58,7 @@ public class RequestPassport extends CommonSupport {
                         if (userObject != null) {
                             user = new User();
                             user.setId(userObject.getString("id"));
+                            user.setAccountid(userObject.getString("accountid"));
                             user.setName(userObject.getString("name"));
                             user.setAvstar(userObject.getString("avstar"));
                             user.setAvstar100(userObject.getString("avstar100"));
