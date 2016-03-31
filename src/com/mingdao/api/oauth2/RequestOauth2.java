@@ -6,6 +6,7 @@ import com.mingdao.api.passport.RequestPassport;
 import com.mingdao.api.resources.URI;
 import com.mingdao.api.utils.AppConfigUtil;
 import com.mingdao.api.utils.RequestType;
+import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
@@ -169,8 +170,9 @@ public class RequestOauth2 extends CommonSupport {
         return oAuth2Object;
     }
 
-    public static OAuth2Object getWxToken(String unionId,String openId,
-                                          String nickName,String sex,String headImgUrl) throws Exception {
+    public static WxObject getWxToken(String unionId,String openId,
+                                          String nickName,String sex,String headImgUrl,boolean reqPassword) throws Exception {
+        boolean success=false;
         AppConfig appConfig = AppConfigUtil.create();
         Map<String, String> params = new HashMap<String, String>();
         params.put("app_key", appConfig.getAppKey());
@@ -180,36 +182,101 @@ public class RequestOauth2 extends CommonSupport {
         params.put("nickName", nickName);
         params.put("sex", sex);
         params.put("headImgUrl", headImgUrl);
-        OAuth2Object oAuth2Object = null;
+        if(reqPassword){
+            params.put("req_type", "password");
+        }
+        WxObject wxObject=null;
         ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.OAUTH2_GET_WX_TOKEN, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
                 if (StringUtils.isNotBlank(result)) {
-                    System.out.println(result);
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if(rootObject!=null){
+                        wxObject = new WxObject();
+                        wxObject.setSuccess(rootObject.getBoolean("success"));
+                        if(wxObject.isSuccess()){
+                            if(rootObject.containsKey("regUrl")){
+                                wxObject.setState(rootObject.getString("state"));
+                                wxObject.setRegUrl(rootObject.getString("regUrl"));
+                            }else if(rootObject.containsKey("projects")){
+                                JSONArray projects=rootObject.getJSONArray("projects");
+                                if(projects!=null){
+                                    List<NetWork> netWorkList = new ArrayList<NetWork>();
+                                    for(Object network:projects){
+                                        JSONObject networkObj=(JSONObject)network;
+                                        if(networkObj!=null){
+                                            NetWork netWork=new NetWork();
+                                            netWork.setId(networkObj.getString("projectid"));
+                                            netWork.setName(networkObj.getString("company_name"));
+                                        }
+                                    }
+                                    wxObject.setNetWorkList(netWorkList);
+                                }
+                            }else if(rootObject.containsKey("username")&&rootObject.containsKey("password")){
+                                wxObject.setUserName(rootObject.getString("username"));
+                                wxObject.setPassword(rootObject.getString("password"));
+                            }
+                        }
+
+                    }
                 }
             }
         }
-        return oAuth2Object;
+        return wxObject;
     }
 
-    public static OAuth2Object bindWxToken(String username,String password,
+    public static boolean bindWxToken(String username,String password,
                                           String unionId,String state) throws Exception {
+        boolean success=false;
+        AppConfig appConfig = AppConfigUtil.create();
         Map<String, String> params = new HashMap<String, String>();
+        params.put("app_key", appConfig.getAppKey());
+        params.put("app_secret", appConfig.getAppSecret());
         params.put("username", username);
         params.put("password", password);
         params.put("unionId", unionId);
         params.put("state", state);
-        OAuth2Object oAuth2Object = null;
         ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.OAUTH2_BIND_WX_TOKEN, RequestType.POST);
         if (responseObject != null) {
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
                 if (StringUtils.isNotBlank(result)) {
-                    System.out.println(result);
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if(rootObject!=null){
+                        success=rootObject.getBoolean("success");
+                    }
                 }
             }
         }
-        return oAuth2Object;
+        return success;
+    }
+
+    public static WxObject getPassword(String username,String password) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("username", username);
+        params.put("password", password);
+        WxObject wxObject=null;
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.OAUTH2_GET_PASSWORD, RequestType.POST);
+        if (responseObject != null) {
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if(rootObject!=null){
+                        wxObject = new WxObject();
+                        wxObject.setSuccess(rootObject.getBoolean("success"));
+                        if(wxObject.isSuccess()){
+                            if(rootObject.containsKey("username")&&rootObject.containsKey("password")){
+                                wxObject.setUserName(rootObject.getString("username"));
+                                wxObject.setPassword(rootObject.getString("password"));
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        return wxObject;
     }
 }

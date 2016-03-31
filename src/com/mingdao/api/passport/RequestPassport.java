@@ -77,6 +77,7 @@ public class RequestPassport extends CommonSupport {
                             user.setFollowedStatus(userObject.getString("followed_status"));
                             user.setLicense(userObject.getString("license"));
                             user.setStatus(userObject.getInt("status"));
+                            user.setUnitName(userObject.getString("unit_name"));
                             JSONObject projectObj= userObject.getJSONObject("project");
                             if(projectObj!=null){
                                 NetWork netWork=new NetWork();

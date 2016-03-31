@@ -21,9 +21,13 @@ public class URI {
 
     public static final String OAUTH2_EMAIL = "/oauth2/verify_email";
 
-    public static final String OAUTH2_GET_WX_TOKEN = "/oauth2/get_wx_token.aspx";
+    public static final String OAUTH2_GET_WX_TOKEN = "/auth2/get_wx_token.aspx";
 
-    public static final String OAUTH2_BIND_WX_TOKEN = "/oauth2/bind_wx_token.aspx";
+    public static final String OAUTH2_BIND_WX_TOKEN = "/auth2/bind_wx_token.aspx";
+
+    public static final String OAUTH2_GET_PASSWORD = "/auth2/get_password.aspx";
+
+
 
 
 
