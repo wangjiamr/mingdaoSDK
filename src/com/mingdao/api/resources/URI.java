@@ -72,6 +72,8 @@ public class URI {
 
     public static final String USER_GET_SUBORDINATE_USERS = "/user/get_subordinateUsers";
 
+    public static final String  USER_ADD_SUBORDINATE_USERS="add_subordinateUsers.aspx";
+
 
 
 
@@ -183,6 +185,8 @@ public class URI {
     public static final String DEPT_EDIT="/mdprivate/group/editDepartment";
 
     public static final String DEPT_DEL="/mdprivate/group/delDepartments";
+
+
 
 
 

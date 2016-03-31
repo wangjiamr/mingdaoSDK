@@ -769,4 +769,27 @@ public class RequestUser extends CommonSupport {
         }
         return status;
     }
+
+    public static String addSubordinateUsers(String accessToken, String mangerId,String userIds,String oldManagerId) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("format", "json");
+        params.put("access_token", accessToken);
+        params.put("u_ids", userIds);
+        params.put("m_id",mangerId);
+        params.put("o_mid",oldManagerId);
+
+        ResponseObject responseObject = requestAPI(params,getMingdaoUrl()+ URI.USER_ADD_SUBORDINATE_USERS, RequestType.GET);
+        if (responseObject != null) {
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if (rootObject != null) {
+                        return  rootObject.getString("users");
+                    }
+                }
+            }
+        }
+        return null;
+    }
 }
