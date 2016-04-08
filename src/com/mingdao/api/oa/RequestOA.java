@@ -51,12 +51,13 @@ public class RequestOA extends CommonSupport {
 
 
 
-    public static List<Apply> getApplyList(String signature,  String timestamp, String nonce, String companyId) throws Exception {
+    public static List<Apply> getApplyList(String signature,  String timestamp, String nonce, String companyId,String applyName) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("companyId", companyId);
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
+        params.put("applyName", applyName);
         List<Apply> applyList=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_APPLY_LIST, RequestType.POST);
         if (responseObject != null) {
