@@ -20,6 +20,16 @@ public class ApplyData implements Serializable {
 
     private String sendDate;
 
+    private String startDate;
+
+    private String endDate;
+
+    private String valueClass;
+
+    private Double valueDouble;
+
+    private Integer valueInteger;
+
     private Map<String,String> valueMap;
 
     private Map<String,String> labelMap;
@@ -62,5 +72,45 @@ public class ApplyData implements Serializable {
 
     public void setReqNo(String reqNo) {
         this.reqNo = reqNo;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getValueClass() {
+        return valueClass;
+    }
+
+    public void setValueClass(String valueClass) {
+        this.valueClass = valueClass;
+    }
+
+    public Double getValueDouble() {
+        return valueDouble;
+    }
+
+    public void setValueDouble(Double valueDouble) {
+        this.valueDouble = valueDouble;
+    }
+
+    public Integer getValueInteger() {
+        return valueInteger;
+    }
+
+    public void setValueInteger(Integer valueInteger) {
+        this.valueInteger = valueInteger;
     }
 }
