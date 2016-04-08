@@ -16,6 +16,8 @@ public class ApplyData implements Serializable {
 
     private Long id;
 
+    private String userId;
+
     private String reqNo;
 
     private String sendDate;
@@ -112,5 +114,13 @@ public class ApplyData implements Serializable {
 
     public void setValueInteger(Integer valueInteger) {
         this.valueInteger = valueInteger;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }
