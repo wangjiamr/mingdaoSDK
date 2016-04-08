@@ -310,6 +310,8 @@ public class RequestOA extends CommonSupport {
                                     ApplyData applyData=new ApplyData();
                                     applyData.setId(applyObj.getLong("id"));
                                     applyData.setReqNo(applyObj.getString("reqNo"));
+                                    applyData.setUserId(applyObj.getString("userId"));
+                                    applyData.setValueClass(applyObj.getString("valueClass"));
                                     applyData.setValueInteger(applyObj.getInt("valueInteger"));
                                     applyData.setValueDouble(applyObj.getDouble("valueDouble"));
                                     applyDataList.add(applyData);
@@ -354,6 +356,7 @@ public class RequestOA extends CommonSupport {
                                     ApplyData applyData=new ApplyData();
                                     applyData.setId(applyObj.getLong("id"));
                                     applyData.setReqNo(applyObj.getString("reqNo"));
+                                    applyData.setUserId(applyObj.getString("userId"));
                                     applyData.setStartDate(applyObj.getString("startDate"));
                                     applyData.setEndDate(applyObj.getString("endDate"));
                                     applyDataList.add(applyData);
