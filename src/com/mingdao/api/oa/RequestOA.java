@@ -8,10 +8,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -270,6 +267,95 @@ public class RequestOA extends CommonSupport {
                                             applyData.setLabelMap(labelMap);
                                         }
                                     }
+                                    applyDataList.add(applyData);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return applyDataList;
+    }
+
+    public static List<ApplyData> analysisValue(String signature,  String timestamp, String nonce, String companyId,Long applyId,
+                                                String startDate,String endDate,
+                                                String categoryWidgetUID,String sourceWidgetUID,String valueWidgetUID) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("signature", signature);
+        params.put("companyId", companyId);
+        params.put("timestamp", timestamp);
+        params.put("nonce", nonce);
+        params.put("applyId", applyId+"");
+        params.put("startDate", startDate);
+        params.put("endDate", endDate);
+        params.put("categoryWidgetUID", categoryWidgetUID);
+        params.put("sourceWidgetUID", sourceWidgetUID);
+        params.put("valueWidgetUID", valueWidgetUID);
+        List<ApplyData> applyDataList=null;
+        ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_ANALYSIS_VALUE, RequestType.POST);
+        if (responseObject != null) {
+            System.out.println(responseObject.getResult());
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if (rootObject != null) {
+                        if (rootObject.getString("result").equals("0")) {
+                            JSONArray applyDataArray=rootObject.getJSONArray("applyDataList");
+                            if(applyDataArray!=null&&!applyDataArray.isEmpty()){
+                                applyDataList=new ArrayList<ApplyData>();
+                                for(Object obj:applyDataArray){
+                                    JSONObject applyObj=(JSONObject)obj;
+                                    ApplyData applyData=new ApplyData();
+                                    applyData.setId(applyObj.getLong("id"));
+                                    applyData.setReqNo(applyObj.getString("reqNo"));
+                                    applyData.setValueInteger(applyObj.getInt("valueInteger"));
+                                    applyData.setValueDouble(applyObj.getDouble("valueDouble"));
+                                    applyDataList.add(applyData);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return applyDataList;
+    }
+
+    public static List<ApplyData> analysisDate(String signature,  String timestamp, String nonce, String companyId,Long applyId,
+                                                String startDate,String endDate,
+                                                String startDateWidgetUID,String endDateWidgetUID) throws Exception {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("signature", signature);
+        params.put("companyId", companyId);
+        params.put("timestamp", timestamp);
+        params.put("nonce", nonce);
+        params.put("applyId", applyId+"");
+        params.put("startDate", startDate);
+        params.put("endDate", endDate);
+        params.put("startDateWidgetUID", startDateWidgetUID);
+        params.put("endDateWidgetUID", endDateWidgetUID);
+        List<ApplyData> applyDataList=null;
+        ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_ANALYSIS_DATE, RequestType.POST);
+        if (responseObject != null) {
+            System.out.println(responseObject.getResult());
+            if (!responseObject.isError()) {
+                String result = responseObject.getResult();
+                if (StringUtils.isNotBlank(result)) {
+                    JSONObject rootObject = JSONObject.fromObject(result);
+                    if (rootObject != null) {
+                        if (rootObject.getString("result").equals("0")) {
+                            JSONArray applyDataArray=rootObject.getJSONArray("applyDataList");
+                            if(applyDataArray!=null&&!applyDataArray.isEmpty()){
+                                applyDataList=new ArrayList<ApplyData>();
+                                for(Object obj:applyDataArray){
+                                    JSONObject applyObj=(JSONObject)obj;
+                                    ApplyData applyData=new ApplyData();
+                                    applyData.setId(applyObj.getLong("id"));
+                                    applyData.setReqNo(applyObj.getString("reqNo"));
+                                    applyData.setStartDate(applyObj.getString("startDate"));
+                                    applyData.setEndDate(applyObj.getString("endDate"));
                                     applyDataList.add(applyData);
                                 }
                             }
