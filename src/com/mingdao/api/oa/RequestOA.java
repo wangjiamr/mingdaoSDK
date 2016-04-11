@@ -295,7 +295,6 @@ public class RequestOA extends CommonSupport {
         List<ApplyData> applyDataList=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_ANALYSIS_VALUE, RequestType.POST);
         if (responseObject != null) {
-            System.out.println(responseObject.getResult());
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
                 if (StringUtils.isNotBlank(result)) {
@@ -314,6 +313,8 @@ public class RequestOA extends CommonSupport {
                                     applyData.setValueClass(applyObj.getString("valueClass"));
                                     applyData.setValueInteger(applyObj.getInt("valueInteger"));
                                     applyData.setValueDouble(applyObj.getDouble("valueDouble"));
+                                    applyData.setStartDate(applyObj.getString("startDate"));
+                                    applyData.setEndDate(applyObj.getString("endDate"));
                                     applyDataList.add(applyData);
                                 }
                             }
@@ -341,7 +342,6 @@ public class RequestOA extends CommonSupport {
         List<ApplyData> applyDataList=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_ANALYSIS_DATE, RequestType.POST);
         if (responseObject != null) {
-            System.out.println(responseObject.getResult());
             if (!responseObject.isError()) {
                 String result = responseObject.getResult();
                 if (StringUtils.isNotBlank(result)) {
