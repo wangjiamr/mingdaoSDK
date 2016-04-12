@@ -280,7 +280,8 @@ public class RequestOA extends CommonSupport {
 
     public static List<ApplyData> analysisValue(String signature,  String timestamp, String nonce, String companyId,Long applyId,
                                                 String startDate,String endDate,
-                                                String categoryWidgetUID,String sourceWidgetUID,String valueWidgetUID) throws Exception {
+                                                String categoryWidgetUID,String sourceWidgetUID,String startDateWidgetUID,String endDateWidgetUID
+                                                ,String valueWidgetUID) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("companyId", companyId);
@@ -291,6 +292,8 @@ public class RequestOA extends CommonSupport {
         params.put("endDate", endDate);
         params.put("categoryWidgetUID", categoryWidgetUID);
         params.put("sourceWidgetUID", sourceWidgetUID);
+        params.put("startDateWidgetUID", startDateWidgetUID);
+        params.put("endDateWidgetUID", endDateWidgetUID);
         params.put("valueWidgetUID", valueWidgetUID);
         List<ApplyData> applyDataList=null;
         ResponseObject responseObject = requestAPI(params, getOaUrl()+URI.OA_ANALYSIS_VALUE, RequestType.POST);
@@ -327,8 +330,8 @@ public class RequestOA extends CommonSupport {
     }
 
     public static List<ApplyData> analysisDate(String signature,  String timestamp, String nonce, String companyId,Long applyId,
-                                                String startDate,String endDate,
-                                                String startDateWidgetUID,String endDateWidgetUID) throws Exception {
+                                               String startDate,String endDate,
+                                               String categoryWidgetUID,String sourceWidgetUID,String startDateWidgetUID,String endDateWidgetUID) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
         params.put("signature", signature);
         params.put("companyId", companyId);
@@ -337,6 +340,8 @@ public class RequestOA extends CommonSupport {
         params.put("applyId", applyId+"");
         params.put("startDate", startDate);
         params.put("endDate", endDate);
+        params.put("categoryWidgetUID", categoryWidgetUID);
+        params.put("sourceWidgetUID", sourceWidgetUID);
         params.put("startDateWidgetUID", startDateWidgetUID);
         params.put("endDateWidgetUID", endDateWidgetUID);
         List<ApplyData> applyDataList=null;
