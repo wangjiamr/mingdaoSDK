@@ -278,7 +278,7 @@ public class RequestOA extends CommonSupport {
         return applyDataList;
     }
 
-    public static List<ApplyData> analysisValue(String signature,  String timestamp, String nonce, String companyId,Long applyId,
+    public static List<ApplyData> analysisValue(String signature,  String timestamp, String nonce, String companyId,Long applyId,Long userId,
                                                 String startDate,String endDate,
                                                 String categoryWidgetUID,String sourceWidgetUID,String startDateWidgetUID,String endDateWidgetUID
                                                 ,String valueWidgetUID) throws Exception {
@@ -288,6 +288,9 @@ public class RequestOA extends CommonSupport {
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
         params.put("applyId", applyId+"");
+        if(userId!=null){
+            params.put("userId", userId+"");
+        }
         params.put("startDate", startDate);
         params.put("endDate", endDate);
         params.put("categoryWidgetUID", categoryWidgetUID);
@@ -330,7 +333,7 @@ public class RequestOA extends CommonSupport {
         return applyDataList;
     }
 
-    public static List<ApplyData> analysisDate(String signature,  String timestamp, String nonce, String companyId,Long applyId,
+    public static List<ApplyData> analysisDate(String signature,  String timestamp, String nonce, String companyId,Long applyId,Long userId,
                                                String startDate,String endDate,
                                                String categoryWidgetUID,String sourceWidgetUID,String startDateWidgetUID,String endDateWidgetUID) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
@@ -339,6 +342,9 @@ public class RequestOA extends CommonSupport {
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
         params.put("applyId", applyId+"");
+        if(userId!=null){
+            params.put("userId", userId+"");
+        }
         params.put("startDate", startDate);
         params.put("endDate", endDate);
         params.put("categoryWidgetUID", categoryWidgetUID);
