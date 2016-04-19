@@ -278,7 +278,7 @@ public class RequestOA extends CommonSupport {
         return applyDataList;
     }
 
-    public static List<ApplyData> analysisValue(String signature,  String timestamp, String nonce, String companyId,Long applyId,Long userId,
+    public static List<ApplyData> analysisValue(String signature,  String timestamp, String nonce, String companyId,Long applyId,String userId,
                                                 String startDate,String endDate,
                                                 String categoryWidgetUID,String sourceWidgetUID,String startDateWidgetUID,String endDateWidgetUID
                                                 ,String valueWidgetUID) throws Exception {
@@ -288,8 +288,8 @@ public class RequestOA extends CommonSupport {
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
         params.put("applyId", applyId+"");
-        if(userId!=null){
-            params.put("userId", userId+"");
+        if(StringUtils.isNotBlank(userId)){
+            params.put("userId", userId);
         }
         params.put("startDate", startDate);
         params.put("endDate", endDate);
@@ -321,6 +321,7 @@ public class RequestOA extends CommonSupport {
                                     applyData.setValueDouble(applyObj.getDouble("valueDouble"));
                                     applyData.setStartDate(applyObj.getString("startDate"));
                                     applyData.setEndDate(applyObj.getString("endDate"));
+                                    applyData.setSendDate(applyObj.getString("sendDate"));
                                     applyData.setJsonData(applyObj.getJSONObject("jsonData"));
                                     applyDataList.add(applyData);
                                 }
@@ -333,7 +334,7 @@ public class RequestOA extends CommonSupport {
         return applyDataList;
     }
 
-    public static List<ApplyData> analysisDate(String signature,  String timestamp, String nonce, String companyId,Long applyId,Long userId,
+    public static List<ApplyData> analysisDate(String signature,  String timestamp, String nonce, String companyId,Long applyId,String userId,
                                                String startDate,String endDate,
                                                String categoryWidgetUID,String sourceWidgetUID,String startDateWidgetUID,String endDateWidgetUID) throws Exception {
         Map<String, String> params = new HashMap<String, String>();
@@ -342,8 +343,8 @@ public class RequestOA extends CommonSupport {
         params.put("timestamp", timestamp);
         params.put("nonce", nonce);
         params.put("applyId", applyId+"");
-        if(userId!=null){
-            params.put("userId", userId+"");
+        if(StringUtils.isNotBlank(userId)){
+            params.put("userId", userId);
         }
         params.put("startDate", startDate);
         params.put("endDate", endDate);
@@ -371,6 +372,7 @@ public class RequestOA extends CommonSupport {
                                     applyData.setUserId(applyObj.getString("userId"));
                                     applyData.setStartDate(applyObj.getString("startDate"));
                                     applyData.setEndDate(applyObj.getString("endDate"));
+                                    applyData.setSendDate(applyObj.getString("sendDate"));
                                     applyData.setJsonData(applyObj.getJSONObject("jsonData"));
                                     applyDataList.add(applyData);
                                 }
