@@ -318,6 +318,7 @@ public class RequestOA extends CommonSupport {
                                     applyData.setValueDouble(applyObj.getDouble("valueDouble"));
                                     applyData.setStartDate(applyObj.getString("startDate"));
                                     applyData.setEndDate(applyObj.getString("endDate"));
+                                    applyData.setJsonData(applyObj.getJSONObject("jsonData"));
                                     applyDataList.add(applyData);
                                 }
                             }
@@ -364,6 +365,7 @@ public class RequestOA extends CommonSupport {
                                     applyData.setUserId(applyObj.getString("userId"));
                                     applyData.setStartDate(applyObj.getString("startDate"));
                                     applyData.setEndDate(applyObj.getString("endDate"));
+                                    applyData.setJsonData(applyObj.getJSONObject("jsonData"));
                                     applyDataList.add(applyData);
                                 }
                             }

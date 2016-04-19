@@ -1,5 +1,7 @@
 package com.mingdao.api.entity;
 
+import net.sf.json.JSONObject;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -35,6 +37,8 @@ public class ApplyData implements Serializable {
     private Map<String,String> valueMap;
 
     private Map<String,String> labelMap;
+
+    private JSONObject jsonData;
 
     public Long getId() {
         return id;
@@ -122,5 +126,13 @@ public class ApplyData implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public JSONObject getJsonData() {
+        return jsonData;
+    }
+
+    public void setJsonData(JSONObject jsonData) {
+        this.jsonData = jsonData;
     }
 }
