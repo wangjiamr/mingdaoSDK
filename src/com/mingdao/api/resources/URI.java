@@ -362,6 +362,11 @@ public class URI {
 
     public static final String OA_APPLY_DATA = "/common/hrService/applyData";
 
+    public static final String OA_ANALYSIS_VALUE = "/common/hrService/analysisValue";
+
+
+    public static final String OA_ANALYSIS_DATE = "/common/hrService/analysisDate";
+
     /**
      * *******************OA_SEARCH********************
      */
